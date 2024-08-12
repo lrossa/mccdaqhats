@@ -102,16 +102,20 @@ enum ParameterId
  */
 struct paramMccDaqHats
 {
-    int         iAsynReason; ///< for later: asyn reason/index for registered parameter
-    epicsUInt8  byAddress;   ///< HAT address
-    epicsUInt16 wHatID;      ///< HAT id -> hardware type
-    ParameterId iHatParam;   ///< parameter id
-    std::vector<double> adCache; ///< cache of last read data
+    int         iAsynReason;  ///< for later: asyn reason/index for registered parameter
+    epicsUInt8  byAddress;    ///< HAT address
+    epicsUInt16 wHatID;       ///< HAT id -> hardware type
+    ParameterId iHatParam;    ///< parameter id
+    bool        bWritable;    ///< data direction for generated DB file
+    std::string sDescription; ///< description for generated DB file
+    std::vector<std::string> asEnum;  ///< list of allowed enumerations
+    std::vector<double>      adCache; ///< cache of last read data
 };
 
 /* ========================================================================
  * mccdaqhats controller
  * ======================================================================== */
+std::map<std::string, mccdaqhatsCtrl*> mccdaqhatsCtrl::m_mapControllers;
 
 /**
  * @brief constructor of controller;
@@ -134,6 +138,7 @@ mccdaqhatsCtrl::mccdaqhatsCtrl(const char* szAsynPortName, double dTimeout)
     , m_dTimeout(dTimeout)
     , m_hThread(static_cast<epicsThreadId>(0))
 {
+    m_mapControllers[szAsynPortName] = this;
 }
 
 /// destructor
@@ -166,6 +171,9 @@ mccdaqhatsCtrl::~mccdaqhatsCtrl()
             case HAT_ID_MCC_172: mcc172_close(i); break;
         }
     }
+    auto it(m_mapControllers.find(portName));
+    if (it != m_mapControllers.end())
+        m_mapControllers.erase(it);
 }
 
 /**
@@ -335,7 +343,7 @@ void mccdaqhatsCtrl::initialize(const iocshArgBuf* pArgs)
     {
         struct HatInfo* pInfo(&(*it));
         char szPrefix[32], szSerial[1024];
-        struct MCCAsynParam { const char* szSuffix; asynParamType iAsynType; ParameterId iHatParam; } *pParamList;
+        struct MCCAsynParam { const char* szSuffix; asynParamType iAsynType; ParameterId iHatParam; bool bWriteable; const char* szDesc; const char* szEnum; } *pParamList;
         // MCC 118 create parameters (8-ch 12 bit single-ended analog input)
                 //    MCC_A<n>C0…MCC_A<n>C7   (floatarray)
                 //    MCC_A<n>MASK (uint8 0xFF, 1…255 channel selection bit mask)
@@ -345,10 +353,13 @@ void mccdaqhatsCtrl::initialize(const iocshArgBuf* pArgs)
                 //    MCC_A<n>OFFSET0…7 (float 0)
                 //    MCC_A<n>START (enum 0, STOP=0, START=1)
         struct MCCAsynParam aMCC118Params[] =
-            { { "C",     asynParamInt16Array, MCCDAQHAT_C0     },
-              { "SLOPE", asynParamFloat64,    MCCDAQHAT_SLOPE0 }, { "OFFSET", asynParamFloat64, MCCDAQHAT_OFFSET0 },
-              { "START", asynParamInt32,      MCCDAQHAT_START  }, { "MASK",   asynParamInt32,   MCCDAQHAT_MASK    },
-              { "TRIG",  asynParamInt32,      MCCDAQHAT_TRIG   }, { "RATE",   asynParamFloat64, MCCDAQHAT_RATE    } };
+            { { "C",      asynParamFloat64Array, MCCDAQHAT_C0,      false, "channel value(s)", nullptr },
+              { "SLOPE",  asynParamFloat64,      MCCDAQHAT_SLOPE0,  false, "EEPROM correction factor", nullptr },
+              { "OFFSET", asynParamFloat64,      MCCDAQHAT_OFFSET0, false, "EEPROM correction offset", nullptr },
+              { "START",  asynParamInt32,        MCCDAQHAT_START,   true,  "acquisition state", "stop|start" },
+              { "MASK",   asynParamInt32,        MCCDAQHAT_MASK,    true,  "channel selection bit mask", nullptr },
+              { "TRIG",   asynParamInt32,        MCCDAQHAT_TRIG,    true,  "trigger mode", "none|rising|falling|high|low" },
+              { "RATE",   asynParamFloat64,      MCCDAQHAT_RATE,    true,  "ADC clock (<=0 ext. clock, freq. hint)", nullptr } };
         // MCC 128 create parameters (4-ch differential / 8-ch single-ended 16 bit analog input)
                 //    MCC_A<n>C0…MCC_A<n>C7   (floatarray)
                 //    MCC_A<n>MASK      (uint8 0xFF, 1…255 channel selection bit mask)
@@ -360,14 +371,21 @@ void mccdaqhatsCtrl::initialize(const iocshArgBuf* pArgs)
                 //    MCC_A<n>OFFSET0…3 (float 0)
                 //    MCC_A<n>START     (enum 0, STOP=0, START=1)
         struct MCCAsynParam aMCC128Params[] =
-            { { "C",       asynParamInt16Array, MCCDAQHAT_C0      },
-              { "SLOPE0",  asynParamFloat64,    MCCDAQHAT_SLOPE0  }, { "SLOPE1",  asynParamFloat64, MCCDAQHAT_SLOPE1  },
-              { "SLOPE2",  asynParamFloat64,    MCCDAQHAT_SLOPE2  }, { "SLOPE3",  asynParamFloat64, MCCDAQHAT_SLOPE3  },
-              { "OFFSET0", asynParamFloat64,    MCCDAQHAT_OFFSET0 }, { "OFFSET1", asynParamFloat64, MCCDAQHAT_OFFSET1 },
-              { "OFFSET2", asynParamFloat64,    MCCDAQHAT_OFFSET2 }, { "OFFSET3", asynParamFloat64, MCCDAQHAT_OFFSET3 },
-              { "START",   asynParamInt32,      MCCDAQHAT_START   }, { "MASK",    asynParamInt32,   MCCDAQHAT_MASK    },
-              { "TRIG",    asynParamInt32,      MCCDAQHAT_TRIG    }, { "RATE",    asynParamFloat64, MCCDAQHAT_RATE    },
-              { "RANGE",   asynParamInt32,      MCCDAQHAT_RANGE   }, { "MODE",    asynParamInt32,   MCCDAQHAT_MODE    } };
+            { { "C",       asynParamFloat64Array, MCCDAQHAT_C0,      false, "channel value(s)", nullptr },
+              { "SLOPE0",  asynParamFloat64,      MCCDAQHAT_SLOPE0,  false, "EEPROM correction factor", nullptr },
+              { "SLOPE1",  asynParamFloat64,      MCCDAQHAT_SLOPE1,  false, "EEPROM correction factor", nullptr },
+              { "SLOPE2",  asynParamFloat64,      MCCDAQHAT_SLOPE2,  false, "EEPROM correction factor", nullptr },
+              { "SLOPE3",  asynParamFloat64,      MCCDAQHAT_SLOPE3,  false, "EEPROM correction factor", nullptr },
+              { "OFFSET0", asynParamFloat64,      MCCDAQHAT_OFFSET0, false, "EEPROM correction offset", nullptr },
+              { "OFFSET1", asynParamFloat64,      MCCDAQHAT_OFFSET1, false, "EEPROM correction offset", nullptr },
+              { "OFFSET2", asynParamFloat64,      MCCDAQHAT_OFFSET2, false, "EEPROM correction offset", nullptr },
+              { "OFFSET3", asynParamFloat64,      MCCDAQHAT_OFFSET3, false, "EEPROM correction offset", nullptr },
+              { "START",   asynParamInt32,        MCCDAQHAT_START,   true,  "acquisition state", "stop|start" },
+              { "MASK",    asynParamInt32,        MCCDAQHAT_MASK,    true,  "channel selection bit mask", nullptr },
+              { "TRIG",    asynParamInt32,        MCCDAQHAT_TRIG,    true,  "trigger mode", "none|rising|falling|high|low" },
+              { "RATE",    asynParamFloat64,      MCCDAQHAT_RATE,    true,  "ADC clock (<=0 ext. clock, freq. hint)", nullptr },
+              { "RANGE",   asynParamInt32,        MCCDAQHAT_RANGE,   true,  "analog input range", "10V|5V|2V|1V" },
+              { "MODE",    asynParamInt32,        MCCDAQHAT_MODE,    true,  "input mode", "single-ended|differential" } };
         // MCC 134 create parameters (4-ch 24 bit thermocouple input)
                 //    MCC_A<n>C0…MCC_A<n>C3 (float)
                 //    MCC_A<n>CJC0…3    (float cold junction compensation)
@@ -376,9 +394,12 @@ void mccdaqhatsCtrl::initialize(const iocshArgBuf* pArgs)
                 //    MCC_A<n>SLOPE0…3  (float 1)
                 //    MCC_A<n>OFFSET0…3 (float 0)
         struct MCCAsynParam aMCC134Params[] =
-            { { "C",      asynParamFloat64, MCCDAQHAT_C0      }, { "CJC",    asynParamFloat64, MCCDAQHAT_CJC0    },
-              { "TCTYPE", asynParamInt32,   MCCDAQHAT_TCTYPE0 }, { "RATE",   asynParamInt32,   MCCDAQHAT_RATE    },
-              { "SLOPE",  asynParamFloat64, MCCDAQHAT_SLOPE0  }, { "OFFSET", asynParamFloat64, MCCDAQHAT_OFFSET0 } };
+            { { "C",      asynParamFloat64, MCCDAQHAT_C0,      false, "channel value", nullptr },
+              { "CJC",    asynParamFloat64, MCCDAQHAT_CJC0,    false, "cold junction compensation value", nullptr },
+              { "TCTYPE", asynParamInt32,   MCCDAQHAT_TCTYPE0, true,  "thermocouple type", "disabled|J|K|T|E|R|S|B|N" },
+              { "RATE",   asynParamInt32,   MCCDAQHAT_RATE,    true,  "update interval", nullptr },
+              { "SLOPE",  asynParamFloat64, MCCDAQHAT_SLOPE0,  false, "EEPROM correction factor", nullptr },
+              { "OFFSET", asynParamFloat64, MCCDAQHAT_OFFSET0, false, "EEPROM correction offset", nullptr } };
         // MCC 152 create parameters (2-ch 12 bit analog output, 8-ch digital I/O)
                 //    MCC_A<n>C0   (uint16)
                 //    MCC_A<n>C1   (uint16)
@@ -391,11 +412,16 @@ void mccdaqhatsCtrl::initialize(const iocshArgBuf* pArgs)
                 //    MCC_A<n>IN_LATCH    (uint8 0x00, input latch bits: 0=non-latched, 1=latched)
                 //    MCC_A<n>OUT_TYPE    (uint8 0x00, output config bits: 0=push/pull, 1=open-drain)
         struct MCCAsynParam aMCC152Params[] =
-            { { "C0",          asynParamInt32, MCCDAQHAT_C0          }, { "C1",         asynParamInt32, MCCDAQHAT_C1         },
-              { "DI",          asynParamInt32, MCCDAQHAT_DI          }, { "DO",         asynParamInt32, MCCDAQHAT_DO         },
-              { "DIR",         asynParamInt32, MCCDAQHAT_DIR         }, { "IN_PULL_EN", asynParamInt32, MCCDAQHAT_IN_PULL_EN },
-              { "IN_PULL_CFG", asynParamInt32, MCCDAQHAT_IN_PULL_CFG }, { "IN_INV",     asynParamInt32, MCCDAQHAT_IN_INV     },
-              { "IN_LATCH",    asynParamInt32, MCCDAQHAT_IN_LATCH    }, { "OUT_TYPE",   asynParamInt32, MCCDAQHAT_OUT_TYPE   } };
+            { { "C0",          asynParamFloat64, MCCDAQHAT_C0,          true, "channel value", nullptr },
+              { "C1",          asynParamFloat64, MCCDAQHAT_C1,          true, "channel value", nullptr },
+              { "DI",          asynParamInt32,   MCCDAQHAT_DI,          true, "digital input bitmask", nullptr },
+              { "DO",          asynParamInt32,   MCCDAQHAT_DO,          true, "digital output bitmask", nullptr },
+              { "DIR",         asynParamInt32,   MCCDAQHAT_DIR,         true, "direction bit mask (0=output, 1=input)", nullptr },
+              { "IN_PULL_EN",  asynParamInt32,   MCCDAQHAT_IN_PULL_EN,  true, "pull-resistor enable bit mask", nullptr },
+              { "IN_PULL_CFG", asynParamInt32,   MCCDAQHAT_IN_PULL_CFG, true, "pull-resistor direction bit mask (1=up)", nullptr },
+              { "IN_INV",      asynParamInt32,   MCCDAQHAT_IN_INV,      true, "input invertion mask", nullptr },
+              { "IN_LATCH",    asynParamInt32,   MCCDAQHAT_IN_LATCH,    true, "input latch bit mask", nullptr },
+              { "OUT_TYPE",    asynParamInt32,   MCCDAQHAT_OUT_TYPE,    true, "out conf bit mask (0=push,1=open-drain)", nullptr } };
         // MCC 172 create parameters (2-ch 24 bit differential analog input)
                 //    MCC_A<n>C0…MCC_A<n>C1   (floatarray)
                 //    MCC_A<n>MASK (uint8 0x03, 1…3 channel selection bit mask)
@@ -407,11 +433,15 @@ void mccdaqhatsCtrl::initialize(const iocshArgBuf* pArgs)
                 //    MCC_A<n>START (enum 0, STOP=0, START=1)
                 //    MCC_A<n>IEPE0…1 (enum 0, OFF=0, ON=1)
         struct MCCAsynParam aMCC172Params[] =
-            { { "C",      asynParamInt16Array, MCCDAQHAT_C0      }, { "SLOPE",  asynParamFloat64, MCCDAQHAT_SLOPE0 },
-              { "OFFSET", asynParamFloat64,    MCCDAQHAT_OFFSET0 }, { "IEPE",   asynParamInt32,   MCCDAQHAT_IEPE0  },
-              { "START",  asynParamInt32,      MCCDAQHAT_START   }, { "MASK",   asynParamInt32,   MCCDAQHAT_MASK   },
-              { "TRIG",   asynParamInt32,      MCCDAQHAT_TRIG    }, { "CLKSRC", asynParamInt32,   MCCDAQHAT_CLKSRC },
-              { "RATE",   asynParamFloat64,    MCCDAQHAT_RATE    } };
+            { { "C",      asynParamFloat64Array, MCCDAQHAT_C0,      false, "channel value", nullptr },
+              { "SLOPE",  asynParamFloat64,      MCCDAQHAT_SLOPE0,  false, "EEPROM correction factor", nullptr },
+              { "OFFSET", asynParamFloat64,      MCCDAQHAT_OFFSET0, false, "EEPROM correction offset", nullptr },
+              { "IEPE",   asynParamInt32,        MCCDAQHAT_IEPE0,   true,  "IEPE power", "OFF|ON" },
+              { "START",  asynParamInt32,        MCCDAQHAT_START,   true,  "acquisition state", "stop|start" },
+              { "MASK",   asynParamInt32,        MCCDAQHAT_MASK,    true,  "channel selection bit mask", nullptr },
+              { "TRIG",   asynParamInt32,        MCCDAQHAT_TRIG,    true,  "trigger mode", "none|rising|falling|high|low" },
+              { "CLKSRC", asynParamInt32,        MCCDAQHAT_CLKSRC,  true,  "clock source", "local|master|slave" },
+              { "RATE",   asynParamFloat64,      MCCDAQHAT_RATE,    true,  "sample rate", nullptr } };
         int iChannels(0), iListCount(0), iNoSuffixList(0);
         uint16_t wFW(0), wBoot(0);
 
@@ -529,14 +559,33 @@ handleMCC118:
                 break;
             }
         }
+        if (pInfo->address >= pC->m_abyChannelMask.size())
+            pC->m_abyChannelMask.resize(static_cast<size_t>(pInfo->address) + 1, 0);
+        pC->m_abyChannelMask[pInfo->address] = static_cast<uint8_t>((1 << iChannels) - 1);
         for (int i = 0; i < iListCount; ++i)
         {
             std::string szName;
             struct paramMccDaqHats p;
-            p.byAddress = pInfo->address;
-            p.wHatID    = pInfo->id;
-            p.iHatParam = pParamList[i].iHatParam;
-
+            const char* szEnum(pParamList[i].szEnum);
+            p.iAsynReason  = -1;
+            p.byAddress    = pInfo->address;
+            p.wHatID       = pInfo->id;
+            p.iHatParam    = pParamList[i].iHatParam;
+            p.bWritable    = pParamList[i].bWriteable;
+            p.sDescription = pParamList[i].szDesc;
+            p.asEnum.clear();
+            p.adCache.clear();
+            while (szEnum && *szEnum)
+            {
+              size_t iLen(strlen(szEnum));
+              const char* pSep(strchr(szEnum, '|'));
+              if (pSep) iLen = pSep - szEnum;
+              p.asEnum.push_back(std::string(szEnum, iLen));
+              if (!pSep) break;
+              szEnum = pSep + 1;
+            }
+            if (p.asEnum.size() < 2)
+               p.asEnum.clear();
             for (int j = 0; j < iChannels; ++j)
             {
                 szName = std::string(szPrefix) + std::string("_") + std::string(pParamList[i].szSuffix);
@@ -570,6 +619,18 @@ handleMCC118:
                                 pC->setDoubleParam(p.iAsynReason, o);
                                 break;
                             }
+                            case MCCDAQHAT_MASK:
+                                pC->setIntegerParam(p.iAsynReason, pC->m_abyChannelMask[p.byAddress]);
+                                break;
+                            case MCCDAQHAT_TRIG:
+                                pC->setIntegerParam(p.iAsynReason, 0); // no trigger
+                                break;
+                            case MCCDAQHAT_RATE:
+                                pC->setDoubleParam(p.iAsynReason, 100000); // max 100kHz
+                                break;
+                            case MCCDAQHAT_START: // stopped
+                                pC->setIntegerParam(p.iAsynReason, 0);
+                                break;
                             default: break;
                         }
                         break;
@@ -598,6 +659,24 @@ handleMCC118:
                                 pC->setDoubleParam(p.iAsynReason, o);
                                 break;
                             }
+                            case MCCDAQHAT_MASK:
+                                pC->setIntegerParam(p.iAsynReason, pC->m_abyChannelMask[p.byAddress]);
+                                break;
+                            case MCCDAQHAT_TRIG:
+                                pC->setIntegerParam(p.iAsynReason, 0); // no trigger
+                                break;
+                            case MCCDAQHAT_RATE:
+                                pC->setDoubleParam(p.iAsynReason, 100000); // max 100kHz
+                                break;
+                            case MCCDAQHAT_RANGE:
+                                pC->setIntegerParam(p.iAsynReason, 0); // ±10V
+                                break;
+                            case MCCDAQHAT_MODE:
+                                pC->setIntegerParam(p.iAsynReason, 0); // single-ended
+                                break;
+                            case MCCDAQHAT_START: // stopped
+                                pC->setIntegerParam(p.iAsynReason, 0);
+                                break;
                             default: break;
                         }
                         break;
@@ -620,11 +699,56 @@ handleMCC118:
                                 pC->setDoubleParam(p.iAsynReason, o);
                                 break;
                             }
+                            case MCCDAQHAT_TCTYPE0: // disabled
+                                mcc134_tc_type_write(pInfo->address, static_cast<uint8_t>(p.iHatParam - MCCDAQHAT_TCTYPE0), 0);
+                                pC->setIntegerParam(p.iAsynReason, 0);
+                                break;
+                            case MCCDAQHAT_MASK:
+                                pC->setIntegerParam(p.iAsynReason, pC->m_abyChannelMask[p.byAddress]);
+                                break;
+                            case MCCDAQHAT_RATE: // update every second
+                                mcc134_update_interval_write(pInfo->address, 1);
+                                pC->setIntegerParam(p.iAsynReason, 1);
+                                break;
                             default: break;
                         }
                         break;
                     case HAT_ID_MCC_152: // 2-ch 12 bit analog output, 8-ch digital I/O
-                        break; // nothing to read while init
+                        switch (pParamList[i].iHatParam)
+                        {
+                            case MCCDAQHAT_MASK:
+                                pC->setIntegerParam(p.iAsynReason, pC->m_abyChannelMask[p.byAddress]);
+                                break;
+
+#define HANDLE_MCC152_DATA(param,func,errmsg)   \
+                            case MCCDAQHAT_##param:     \
+                            {                           \
+                                uint8_t byValue(0);     \
+                                if (mcc152_dio_##func##_read_port(pInfo->address, &byValue) == RESULT_SUCCESS) \
+                                    pC->setIntegerParam(p.iAsynReason, byValue); \
+                                break;                  \
+                            }
+#define HANDLE_MCC152_CONF(param,item,errmsg)   \
+                            case MCCDAQHAT_##param:     \
+                            {                           \
+                                uint8_t byValue(0);     \
+                                if (mcc152_dio_config_read_port(pInfo->address, DIO_##item, &byValue) == RESULT_SUCCESS) \
+                                    pC->setIntegerParam(p.iAsynReason, byValue); \
+                                break;                  \
+                            }
+                            HANDLE_MCC152_DATA(DI,input,"digital inputs")
+                            HANDLE_MCC152_DATA(DO,output,"digital outputs")
+                            HANDLE_MCC152_CONF(DIR,DIRECTION,"direction")
+                            HANDLE_MCC152_CONF(IN_PULL_EN,PULL_ENABLE,"pull-up direction")
+                            HANDLE_MCC152_CONF(IN_PULL_CFG,PULL_CONFIG,"pull-up configuration")
+                            HANDLE_MCC152_CONF(IN_INV,INPUT_INVERT,"data invertion")
+                            HANDLE_MCC152_CONF(IN_LATCH,INPUT_LATCH,"latch configuration")
+                            HANDLE_MCC152_CONF(OUT_TYPE,OUTPUT_TYPE,"output configuration")
+#undef HANDLE_MCC152_CONF
+#undef HANDLE_MCC152_DATA
+                            default: break;
+                        }
+                        break;
                     case HAT_ID_MCC_172: // 2-ch 24 bit differential analog input
                         switch (pParamList[i].iHatParam)
                         {
@@ -668,6 +792,12 @@ handleMCC118:
                                     dRate = 0.;
                                 pC->setDoubleParam(p.iAsynReason, dRate);
                             }
+                            case MCCDAQHAT_MASK:
+                                pC->setIntegerParam(p.iAsynReason, pC->m_abyChannelMask[p.byAddress]);
+                                break;
+                            case MCCDAQHAT_START: // stopped
+                                pC->setIntegerParam(p.iAsynReason, 0);
+                                break;
                             default: break;
                         }
                         break;
@@ -681,7 +811,7 @@ handleMCC118:
     {
         epicsThreadOpts opt(EPICS_THREAD_OPTS_INIT);
         opt.priority  = epicsThreadPriorityHigh;
-        opt.stackSize = epicsThreadGetStackSize(epicsThreadStackMedium);
+        opt.stackSize = epicsThreadGetStackSize(epicsThreadStackBig);
         opt.joinable  = 1;
         epicsThreadCreateOpt("mccdaqhats", &mccdaqhatsCtrl::backgroundthreadfunc, static_cast<void*>(pC), &opt);
         while (pC->m_hThread == static_cast<epicsThreadId>(0))
@@ -744,7 +874,7 @@ asynStatus mccdaqhatsCtrl::readInt32(asynUser* pasynUser, epicsInt32* piValue)
     if (pasynUser->reason >= 0 && m_mapParameters.count(pasynUser->reason))
         pParam = m_mapParameters[pasynUser->reason];
     iResult = asynPortDriver::readInt32(pasynUser, piValue); // default handler: read cache
-    if (pParam && iResult == asynSuccess)
+    if (pParam)
     {
         if (pParam->byAddress >= m_abyChannelMask.size())
             m_abyChannelMask.resize(static_cast<size_t>(pParam->byAddress) + 1, 0);
@@ -759,10 +889,12 @@ asynStatus mccdaqhatsCtrl::readInt32(asynUser* pasynUser, epicsInt32* piValue)
                         uint32_t dwSamplesPerChannel(0);
                         *piValue = (mcc118_a_in_scan_status(pParam->byAddress, &wStatus, &dwSamplesPerChannel) == RESULT_SUCCESS
                                     && (wStatus & STATUS_RUNNING) != 0) ? 1 : 0;
+                        iResult = setIntegerParam(pasynUser->reason, *piValue);
                         break;
                     }
                     case MCCDAQHAT_MASK: // uint8 0xFF, 1…255 channel selection bit mask
                         *piValue = m_abyChannelMask[pParam->byAddress];
+                        iResult = setIntegerParam(pasynUser->reason, *piValue);
                         break;
                     default:
                         break;
@@ -777,10 +909,12 @@ asynStatus mccdaqhatsCtrl::readInt32(asynUser* pasynUser, epicsInt32* piValue)
                         uint32_t dwSamplesPerChannel(0);
                         *piValue = (mcc128_a_in_scan_status(pParam->byAddress, &wStatus, &dwSamplesPerChannel) == RESULT_SUCCESS
                                     && (wStatus & STATUS_RUNNING) != 0) ? 1 : 0;
+                        iResult = setIntegerParam(pasynUser->reason, *piValue);
                         break;
                     }
                     case MCCDAQHAT_MASK: // uint8 0xFF, 1…255 channel selection bit mask
                         *piValue = m_abyChannelMask[pParam->byAddress];
+                        iResult = setIntegerParam(pasynUser->reason, *piValue);
                         break;
                     default:
                         break;
@@ -805,6 +939,7 @@ asynStatus mccdaqhatsCtrl::readInt32(asynUser* pasynUser, epicsInt32* piValue)
                                 *piValue = std::numeric_limits<epicsInt32>::min();
                             else
                                 *piValue = static_cast<epicsInt32>(dValue);
+                            iResult = setIntegerParam(pasynUser->reason, *piValue);
                         }
                         else
                         {
@@ -829,6 +964,7 @@ asynStatus mccdaqhatsCtrl::readInt32(asynUser* pasynUser, epicsInt32* piValue)
                                 *piValue = std::numeric_limits<epicsInt32>::min();
                             else
                                 *piValue = static_cast<epicsInt32>(dValue);
+                            iResult = setIntegerParam(pasynUser->reason, *piValue);
                         }
                         else
                         {
@@ -841,7 +977,10 @@ asynStatus mccdaqhatsCtrl::readInt32(asynUser* pasynUser, epicsInt32* piValue)
                     {
                         uint8_t byInterval(0);
                         if (mcc134_update_interval_read(pParam->byAddress, &byInterval) == RESULT_SUCCESS)
+                        {
                             *piValue = byInterval;
+                            iResult = setIntegerParam(pasynUser->reason, *piValue);
+                        }
                         else
                         {
                             asynPrint(pasynUser, ASYN_TRACE_ERROR, "mccdaqhats::readInt32 - MCC134: cannot read update interval\n");
@@ -861,7 +1000,10 @@ asynStatus mccdaqhatsCtrl::readInt32(asynUser* pasynUser, epicsInt32* piValue)
                     {                           \
                         uint8_t byValue(0);     \
                         if (mcc152_dio_##func##_read_port(pParam->byAddress, &byValue) == RESULT_SUCCESS) \
+                        {                       \
                             *piValue = byValue; \
+                            iResult = setIntegerParam(pasynUser->reason, *piValue); \
+                        }                       \
                         else                    \
                         {                       \
                             asynPrint(pasynUser, ASYN_TRACE_ERROR, "mccdaqhats::readInt32 - MCC152: cannot read " errmsg "\n"); \
@@ -874,7 +1016,10 @@ asynStatus mccdaqhatsCtrl::readInt32(asynUser* pasynUser, epicsInt32* piValue)
                     {                           \
                         uint8_t byValue(0);     \
                         if (mcc152_dio_config_read_port(pParam->byAddress, DIO_##item, &byValue) == RESULT_SUCCESS) \
+                        {                       \
                             *piValue = byValue; \
+                            iResult = setIntegerParam(pasynUser->reason, *piValue); \
+                        }                       \
                         else                    \
                         {                       \
                             asynPrint(pasynUser, ASYN_TRACE_ERROR, "mccdaqhats::readInt32 - MCC152: cannot read " errmsg "\n"); \
@@ -905,10 +1050,12 @@ asynStatus mccdaqhatsCtrl::readInt32(asynUser* pasynUser, epicsInt32* piValue)
                         uint32_t dwSamplesPerChannel(0);
                         *piValue = (mcc172_a_in_scan_status(pParam->byAddress, &wStatus, &dwSamplesPerChannel) == RESULT_SUCCESS
                                     && (wStatus & STATUS_RUNNING) != 0) ? 1 : 0;
+                        iResult = setIntegerParam(pasynUser->reason, *piValue);
                         break;
                     }
                     case MCCDAQHAT_MASK: // uint8 0x03, 1…3 channel selection bit mask
                         *piValue = m_abyChannelMask[pParam->byAddress];
+                        iResult = setIntegerParam(pasynUser->reason, *piValue);
                         break;
                     case MCCDAQHAT_IEPE0: // uint8 , 0=OFF, 1=ON
                     case MCCDAQHAT_IEPE1:
@@ -921,6 +1068,7 @@ asynStatus mccdaqhatsCtrl::readInt32(asynUser* pasynUser, epicsInt32* piValue)
                             return asynError;
                         }
                         *piValue = c;
+                        iResult = setIntegerParam(pasynUser->reason, *piValue);
                         break;
                     }
                     default:
@@ -975,10 +1123,10 @@ asynStatus mccdaqhatsCtrl::writeInt32(asynUser* pasynUser, epicsInt32 iValue)
                     else if (!bStarted && m_abyChannelMask[pParam->byAddress])
                     {
                         // prepare data acquisition
-                        int iAsynRate(GetMapHash(pParam->byAddress, MCCDAQHAT_RATE));
+                        int iAsynRate(m_mapDev2Asyn[GetMapHash(pParam->byAddress, MCCDAQHAT_RATE)]);
                         double dRate(static_cast<double>(epicsNAN)), dTmp(dRate);
                         uint8_t byMask(m_abyChannelMask[pParam->byAddress]), byChannels(0);
-                        epicsInt32 iTrig(GetDevParam(pParam->byAddress, MCCDAQHAT_TRIG, static_cast<epicsInt32>(-1)));
+                        epicsInt32 iTrig(GetDevParamInt(pParam->byAddress, MCCDAQHAT_TRIG, static_cast<epicsInt32>(-1)));
                         uint32_t dwOptions(OPTS_CONTINUOUS);
 
                         if (iTrig < 0 || !byMask)
@@ -1076,12 +1224,12 @@ asynStatus mccdaqhatsCtrl::writeInt32(asynUser* pasynUser, epicsInt32 iValue)
                     else if (!bStarted && m_abyChannelMask[pParam->byAddress])
                     {
                         // prepare data acquisition
-                        int iAsynRate(GetMapHash(pParam->byAddress, MCCDAQHAT_RATE));
+                        int iAsynRate(m_mapDev2Asyn[GetMapHash(pParam->byAddress, MCCDAQHAT_RATE)]);
                         double dRate(static_cast<double>(epicsNAN)), dTmp(dRate);
                         uint8_t byMask(m_abyChannelMask[pParam->byAddress]), byChannels(0);
-                        epicsInt32 iTrig(GetDevParam(pParam->byAddress, MCCDAQHAT_TRIG, static_cast<epicsInt32>(-1)));
-                        epicsInt32 iRange(GetDevParam(pParam->byAddress, MCCDAQHAT_RANGE, static_cast<epicsInt32>(-1)));
-                        epicsInt32 iMode(GetDevParam(pParam->byAddress, MCCDAQHAT_MODE, static_cast<epicsInt32>(-1)));
+                        epicsInt32 iTrig(GetDevParamInt(pParam->byAddress, MCCDAQHAT_TRIG, static_cast<epicsInt32>(-1)));
+                        epicsInt32 iRange(GetDevParamInt(pParam->byAddress, MCCDAQHAT_RANGE, static_cast<epicsInt32>(-1)));
+                        epicsInt32 iMode(GetDevParamInt(pParam->byAddress, MCCDAQHAT_MODE, static_cast<epicsInt32>(-1)));
                         uint32_t dwOptions(OPTS_CONTINUOUS);
 
                         if (iTrig < 0 || iRange < 0 || iMode < 0 || !byMask)
@@ -1298,11 +1446,11 @@ asynStatus mccdaqhatsCtrl::writeInt32(asynUser* pasynUser, epicsInt32 iValue)
                     else if (!bStarted && m_abyChannelMask[pParam->byAddress])
                     {
                         // prepare data acquisition
-                        int iAsynRate(GetMapHash(pParam->byAddress, MCCDAQHAT_RATE));
+                        int iAsynRate(m_mapDev2Asyn[GetMapHash(pParam->byAddress, MCCDAQHAT_RATE)]);
                         double dRate(static_cast<double>(epicsNAN)), dTmp(dRate);
                         uint8_t byMask(m_abyChannelMask[pParam->byAddress]), byTmp(0);
-                        epicsInt32 iTrig(GetDevParam(pParam->byAddress, MCCDAQHAT_TRIG, static_cast<epicsInt32>(-1)));
-                        epicsInt32 iClkSrc(GetDevParam(pParam->byAddress, MCCDAQHAT_CLKSRC, static_cast<epicsInt32>(-1)));
+                        epicsInt32 iTrig(GetDevParamInt(pParam->byAddress, MCCDAQHAT_TRIG, static_cast<epicsInt32>(-1)));
+                        epicsInt32 iClkSrc(GetDevParamInt(pParam->byAddress, MCCDAQHAT_CLKSRC, static_cast<epicsInt32>(-1)));
                         uint32_t dwOptions(OPTS_CONTINUOUS);
 
                         if (iTrig < 0 || iClkSrc < 0 || !byMask)
@@ -1438,7 +1586,7 @@ asynStatus mccdaqhatsCtrl::readFloat64(asynUser* pasynUser, epicsFloat64* pdValu
     if (pasynUser->reason >= 0 && m_mapParameters.count(pasynUser->reason))
         pParam = m_mapParameters[pasynUser->reason];
     iResult = asynPortDriver::readFloat64(pasynUser, pdValue); // default handler: read cache
-    if (pParam && iResult == asynSuccess)
+    if (pParam)
     {
         if (pParam->byAddress >= m_abyChannelMask.size())
             m_abyChannelMask.resize(static_cast<size_t>(pParam->byAddress) + 1, 0);
@@ -1462,6 +1610,7 @@ asynStatus mccdaqhatsCtrl::readFloat64(asynUser* pasynUser, epicsFloat64* pdValu
                             asynPrint(pasynUser, ASYN_TRACE_ERROR, "mccdaqhats::readFloat64 - MCC134: cannot read channel value\n");
                             iResult = asynError;
                         }
+                        iResult = setDoubleParam(pasynUser->reason, *pdValue);
                         break;
                     }
                     case MCCDAQHAT_CJC0: // float, cold junction compensation
@@ -1475,6 +1624,7 @@ asynStatus mccdaqhatsCtrl::readFloat64(asynUser* pasynUser, epicsFloat64* pdValu
                             asynPrint(pasynUser, ASYN_TRACE_ERROR, "mccdaqhats::readFloat64 - MCC134: cannot read cold junction channel value\n");
                             iResult = asynError;
                         }
+                        iResult = setDoubleParam(pasynUser->reason, *pdValue);
                         break;
                     }
                     default:
@@ -1655,33 +1805,266 @@ int mccdaqhatsCtrl::GetMapHash(uint8_t byAddress, int iParam)
  * @param[in] iDefaultValue  default value in case of error
  * @return cached value or for errors default value
  */
-epicsInt32 mccdaqhatsCtrl::GetDevParam(uint8_t byAddress, int iParam, epicsInt32 iDefaultValue)
+epicsInt32 mccdaqhatsCtrl::GetDevParamInt(uint8_t byAddress, int iParam, epicsInt32 iDefaultValue)
 {
     epicsInt32 iValue(iDefaultValue);
-    if (getIntegerParam(GetMapHash(byAddress, iParam), &iValue) != asynSuccess)
+    int iIndex(GetMapHash(byAddress, iParam));
+    if (m_mapDev2Asyn.find(iIndex) == m_mapDev2Asyn.end() ||
+        getIntegerParam(m_mapDev2Asyn[iIndex], &iValue) != asynSuccess)
         iValue = iDefaultValue;
     return iValue;
+}
+
+/**
+ * @brief Get asyn cached parameter value of device parameter.
+ * @param[in] byAddress      device address (0…MAX_NUMBER_HATS-1)
+ * @param[in] iParam         enum \ref ParameterId
+ * @param[in] dDefaultValue  default value in case of error
+ * @return cached value or for errors default value
+ */
+epicsFloat64 mccdaqhatsCtrl::GetDevParamDouble(uint8_t byAddress, int iParam, epicsFloat64 dDefaultValue)
+{
+    epicsFloat64 dValue(dDefaultValue);
+    int iIndex(GetMapHash(byAddress, iParam));
+    if (m_mapDev2Asyn.find(iIndex) == m_mapDev2Asyn.end() ||
+        getDoubleParam(m_mapDev2Asyn[iIndex], &dValue) != asynSuccess)
+        dValue = dDefaultValue;
+    return dValue;
+}
+
+/**
+ * @brief mccdaqhatsCtrl::writeDB is an iocsh wrapper function called for "mccdaqhatswriteDB";
+ *        write example EPICS DB file for what the mccdaqhatsInitialize function found here
+ * @param[in] (pArgs)            arguments to this wrapper
+ * @param[in] szAsynPortName     [0]asyn port name of this motor controller
+ * @param[in] szFileName         [1](over)write this file
+ */
+void mccdaqhatsCtrl::writeDB(const iocshArgBuf* pArgs)
+{
+    const char* szAsynPort(pArgs[0].sval);
+    const char* szFilename(pArgs[1].sval);
+    mccdaqhatsCtrl* pInstance(nullptr);
+    size_t uCount(0);
+    FILE* pOutfile(nullptr);
+    bool bFirstCtrl(true);
+    if (szAsynPort && !*szAsynPort) szAsynPort = nullptr;
+    if (szFilename && !*szFilename) szFilename = nullptr;
+    if (szAsynPort)
+    {
+        for (auto it = m_mapControllers.begin(); it != m_mapControllers.end(); ++it)
+        {
+            mccdaqhatsCtrl* pCtrl((*it).second);
+            if (!pCtrl)
+                continue;
+            if (!epicsStrCaseCmp(szAsynPort, pCtrl->portName))
+            {
+                pInstance = pCtrl;
+                break;
+            }
+        }
+        if (!pInstance)
+        {
+            fprintf(stderr, "port %s was not found or is no MCC HAT support\n", szAsynPort);
+            return;
+        }
+        uCount = 1;
+    }
+    else
+    {
+        for (auto it = m_mapControllers.begin(); it != m_mapControllers.end(); ++it)
+            if ((*it).second)
+                ++uCount;
+    }
+    if (!uCount)
+    {
+        fprintf(stderr, "no MCC HAT support was found\n");
+        return;
+    }
+    if (!szFilename)
+    {
+        fprintf(stderr, "missing file name for writing\n");
+        return;
+    }
+    pOutfile = fopen(szFilename, "w");
+    if (!pOutfile)
+    {
+        fprintf(stderr, "cannot open file %s for writing\n", szFilename);
+        return;
+    }
+
+    for (auto it = m_mapControllers.begin(); it != m_mapControllers.end(); ++it)
+    {
+        mccdaqhatsCtrl* pCtrl((*it).second);
+        bool bFirstParam(true);
+        if (!pCtrl || (pInstance && pCtrl != pInstance))
+            continue;
+        pCtrl->lock();
+        if (bFirstCtrl)
+            bFirstCtrl = false;
+        else
+            fprintf(pOutfile, "\n");
+        fprintf(pOutfile, "########################################\n");
+        fprintf(pOutfile, "# asynport %s\n", pCtrl->portName);
+        fprintf(pOutfile, "########################################\n");
+        for (auto it2 = pCtrl->m_mapParameters.begin(); it2 != pCtrl->m_mapParameters.end(); ++it2)
+        {
+            struct paramMccDaqHats* pParam((*it2).second);
+            const char *szHatType(nullptr), *szRecordType(nullptr), *szParamName(nullptr), *szDTYP(nullptr), *szAdditional(nullptr);
+            asynParamType iParamType(asynParamNotDefined);
+            pCtrl->getParamType(pParam->iAsynReason, &iParamType);
+            switch (iParamType)
+            {
+                case asynParamInt32:         szDTYP = "asynInt32";         break;
+                case asynParamInt64:         szDTYP = "asynInt64";         break;
+                case asynParamUInt32Digital: szDTYP = "asynUInt32Digital"; break;
+                case asynParamFloat64:       szDTYP = "asynFloat64";       break;
+                case asynParamOctet:         szDTYP = pParam->bWritable ? "asynOctetWriteRead"  : "asynOctetRead";      break;
+                case asynParamInt8Array:     szDTYP = pParam->bWritable ? "asynInt8ArrayOut"    : "asynInt8ArrayIn";    break;
+                case asynParamInt16Array:    szDTYP = pParam->bWritable ? "asynInt16ArrayOut"   : "asynInt16ArrayIn";   break;
+                case asynParamInt32Array:    szDTYP = pParam->bWritable ? "asynInt32ArrayOut"   : "asynInt32ArrayIn";   break;
+                case asynParamInt64Array:    szDTYP = pParam->bWritable ? "asynInt64ArrayOut"   : "asynInt64ArrayIn";   break;
+                case asynParamFloat32Array:  szDTYP = pParam->bWritable ? "asynFloat32ArrayOut" : "asynFloat32ArrayIn"; break;
+                case asynParamFloat64Array:  szDTYP = pParam->bWritable ? "asynFloat64ArrayOut" : "asynFloat64ArrayIn"; break;
+                default:
+                    continue;
+            }
+            pCtrl->getParamName(pParam->iAsynReason, &szParamName);
+            if (!szParamName || !*szParamName)
+                continue;
+            switch (pParam->wHatID)
+            {
+                case HAT_ID_MCC_118: szHatType = "MCC 118 (8-ch 12 bit single-ended analog input)";                     break;
+                case HAT_ID_MCC_128: szHatType = "MCC 128 (4-ch differential / 8-ch single-ended 16 bit analog input)"; break;
+                case HAT_ID_MCC_134: szHatType = "MCC 134 (4-ch 24 bit thermocouple input)";                            break;
+                case HAT_ID_MCC_152: szHatType = "MCC 152 (2-ch 12 bit analog output, 8-ch digital I/O)";               break;
+                case HAT_ID_MCC_172: szHatType = "MCC 172 (2-ch 24 bit differential analog input)";                     break;
+                default:             szHatType = "?unknown?"; break;
+            }
+            switch (pParam->asEnum.size())
+            {
+                case 0:
+                case 1:
+                    break;
+                case 2:
+                    szRecordType = pParam->bWritable ? "bo" : "bi";
+                    break;
+                default:
+                    szRecordType = pParam->bWritable ? "mbbo" : "mbbi";
+                    break;
+            }
+            if (!szRecordType)
+            {
+                switch (iParamType)
+                {
+                    case asynParamInt32:
+                    case asynParamInt64:
+                    case asynParamUInt32Digital: szRecordType = pParam->bWritable ? "longout" : "longin";     break;
+                    case asynParamFloat64:       szRecordType = pParam->bWritable ? "ao" : "ai";              break;
+                    case asynParamOctet:         szRecordType = pParam->bWritable ? "stringout" : "stringin"; break;
+                    case asynParamInt8Array:     szRecordType = pParam->bWritable ? "aao" : "aai"; szAdditional = "field(FTVL, \"CHAR\")\nfield (NELM, \"$(NELM=10000)\")\n";  break;
+                    case asynParamInt16Array:    szRecordType = pParam->bWritable ? "aao" : "aai"; szAdditional = "field(FTVL, \"SHORT\")\nfield (NELM, \"$(NELM=10000)\")\n"; break;
+                    case asynParamInt32Array:    szRecordType = pParam->bWritable ? "aao" : "aai"; szAdditional = "field(FTVL, \"LONG\")\nfield (NELM, \"$(NELM=10000)\")\n"; break;
+                    case asynParamInt64Array:    szRecordType = pParam->bWritable ? "aao" : "aai"; szAdditional = "field(FTVL, \"INT64\")\nfield (NELM, \"$(NELM=10000)\")\n"; break;
+                    case asynParamFloat32Array:  szRecordType = pParam->bWritable ? "aao" : "aai"; szAdditional = "field(FTVL, \"FLOAT\")\nfield (NELM, \"$(NELM=10000)\")\n"; break;
+                    case asynParamFloat64Array:  szRecordType = pParam->bWritable ? "aao" : "aai"; szAdditional = "field(FTVL, \"DOUBLE\")\nfield (NELM, \"$(NELM=10000)\")\n"; break;
+                        // record(aai,
+                        // record(aao,
+                        // field(TSE,
+                        // field(FTVL,
+                        // field(NELM,
+                        // !info(asyn:FIFO,
+                    default:
+                        break;
+                }
+            }
+            if (!szRecordType || !szDTYP)
+                continue;
+            if (bFirstParam)
+                bFirstParam = false;
+            else
+                fprintf(pOutfile, "\n");
+            fprintf(pOutfile, "# %u %s: 0x%x %s\n", pParam->byAddress, szParamName, pParam->wHatID, szHatType);
+            fprintf(pOutfile, "record(%s, \"$(P):%s\")\n{\n", szRecordType, szParamName);
+            fprintf(pOutfile, "  field(DTYP, \"%s\")\n", szDTYP);
+            fprintf(pOutfile, "  field(%s, \"@asyn(%s,0,1)%s\")\n", pParam->bWritable ? "OUT" : "INP", pCtrl->portName, szParamName);
+            if (!pParam->sDescription.empty())
+                fprintf(pOutfile, "  field(DESC, \"%s\")\n", pParam->sDescription.c_str());
+            if (pParam->bWritable)
+            {
+                fprintf(pOutfile, "  info(asyn:FIFO, \"$(FIFO=100)\")\n");
+                fprintf(pOutfile, "  info(asyn:READBACK, \"1\")\n");
+            }
+            else
+            {
+                fprintf(pOutfile, "  field(SCAN, \"I/O Intr\")\n");
+                fprintf(pOutfile, "  info(asyn:FIFO, \"$(FIFO=100)\")\n");
+            }
+            if (pParam->asEnum.size() == 2)
+            {
+                fprintf(pOutfile, "  field(ZNAM, \"%s\")\n", pParam->asEnum[0].c_str());
+                fprintf(pOutfile, "  field(ONAM, \"%s\")\n", pParam->asEnum[1].c_str());
+            }
+            else if (pParam->asEnum.size() > 2)
+            {
+                const char* aszPrefix[16] = {"ZR","ON","TW","TH","FR","FV","SX","SV","EI","NI","TE","EL","TV","TT","FT","FF"};
+                for (size_t i = 0; i < 16 && i < pParam->asEnum.size(); ++i)
+                {
+                    fprintf(pOutfile, "  field(%sVL, \"%d\")\n", aszPrefix[i], static_cast<int>(i));
+                    fprintf(pOutfile, "  field(%sST, \"%s\")\n", aszPrefix[i], pParam->asEnum[i].c_str());
+                }
+            }
+            if (szAdditional && *szAdditional)
+            {
+                std::string s(szAdditional);
+                while (!s.empty())
+                {
+                    auto i(s.find('\n'));
+                    if (i == std::string::npos)
+                        i = s.size();
+                    ++i;
+                    fprintf(pOutfile, "  %s", s.substr(0, i).c_str());
+                    s.erase(0, i);
+                }
+            }
+            fprintf(pOutfile, "}\n");
+        }
+        pCtrl->unlock();
+    }
+
+    fflush(pOutfile);
+    fclose(pOutfile);
 }
 
 /* ========================================================================
  * iocsh registration
  * ======================================================================== */
 
-#pragma message(CPP_WARNINGPREFIX "TODO - optionally extend parameter list for mccdaqhatsInitialize here")
-#pragma message(CPP_WARNINGPREFIX "TODO - register more IOCsh commands here")
-
-static const iocshArg mccdaqhatsCtrlArg0 = { "asyn-port-name", iocshArgString };
-static const iocshArg mccdaqhatsCtrlArg1 = { "comm-timeout",   iocshArgDouble };
-static const iocshArg* mccdaqhatsCtrlArgs[] = { &mccdaqhatsCtrlArg0, &mccdaqhatsCtrlArg1 };
-
-static const iocshFuncDef mccdaqhatsCtrlDef =
-    { "mccdaqhatsInitialize", ARRAY_SIZE(mccdaqhatsCtrlArgs),
-      mccdaqhatsCtrlArgs
+static const iocshArg mccdaqhatsInitializeArg0 = { "asyn-port-name", iocshArgString };
+static const iocshArg mccdaqhatsInitializeArg1 = { "comm-timeout",   iocshArgDouble };
+static const iocshArg* mccdaqhatsInitializeArgs[] = { &mccdaqhatsInitializeArg0, &mccdaqhatsInitializeArg1 };
+static const iocshFuncDef mccdaqhatsInitializeDef =
+    { "mccdaqhatsInitialize", ARRAY_SIZE(mccdaqhatsInitializeArgs),
+      mccdaqhatsInitializeArgs
 #if defined(EPICS_VERSION) && EPICS_VERSION >= 7
 #if EPICS_REVISION > 0 || EPICS_MODIFICATION >= 3
       ,"register a mccdaqhats controller\n\n"
       "  asyn-port-name  asyn port name of the controller\n"
       "  comm-timeout    PLC communication timeout in sec\n"
+#endif
+#endif
+    };
+
+static const iocshArg mccdaqhatsWriteDBArg0 = { "asyn-port-name", iocshArgString };
+static const iocshArg mccdaqhatsWriteDBArg1 = { "filename",   iocshArgStringPath };
+static const iocshArg* mccdaqhatsWriteDBArgs[] = { &mccdaqhatsWriteDBArg0, &mccdaqhatsWriteDBArg1 };
+static const iocshFuncDef mccdaqhatsWriteDBDef =
+    { "mccdaqhatsWriteDB", ARRAY_SIZE(mccdaqhatsWriteDBArgs),
+      mccdaqhatsWriteDBArgs
+#if defined(EPICS_VERSION) && EPICS_VERSION >= 7
+#if EPICS_REVISION > 0 || EPICS_MODIFICATION >= 3
+      ,"write example EPICS DB file for what the mccdaqhatsInitialize function found here\n\n"
+      "  asyn-port-name  asyn port name of the controller\n"
+      "  filename        (over)write this file\n"
 #endif
 #endif
     };
@@ -1693,7 +2076,8 @@ static void mccdaqhatsRegister()
     if (bFirst)
     {
         bFirst = false;
-        iocshRegister(&mccdaqhatsCtrlDef, &mccdaqhatsCtrl::initialize);
+        iocshRegister(&mccdaqhatsInitializeDef, &mccdaqhatsCtrl::initialize);
+        iocshRegister(&mccdaqhatsWriteDBDef, &mccdaqhatsCtrl::writeDB);
     }
 }
 

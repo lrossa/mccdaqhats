@@ -8,12 +8,17 @@
 dbLoadDatabase "$(TOP)/dbd/mccdaqhats.dbd"
 mccdaqhats_registerRecordDeviceDriver(pdbbase)
 
-## Load record instances
-dbLoadRecords("$(TOP)/db/mccdaqhats_param.db","P=pi,PORT=MYPORT,ADDR=0,TIMEOUT=1,PINI=1")
-
 # initialize controller
 # portname, timeout
 mccdaqhatsInitialize("MYPORT", 1)
+
+# write to DB file, what was found
+# (optional) portname, required filename
+mccdaqhatsWriteDB("MYPORT", "generated.db")
+
+## Load record instances
+dbLoadRecords("generated.db","P=pi,PORT=MYPORT,ADDR=0,TIMEOUT=1,PINI=1")
+#dbLoadRecords("$(TOP)/db/mccdaqhats_param.db","P=pi,PORT=MYPORT,ADDR=0,TIMEOUT=1,PINI=1")
 
 #asynSetTraceFile("MYPORT", -1, "MYPORT.log")
 #asynSetTraceMask("MYPORT", -1, 0x2F) # error, device, filter, driver, warning, !flow
