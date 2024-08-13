@@ -1116,6 +1116,7 @@ asynStatus mccdaqhatsCtrl::writeInt32(asynUser* pasynUser, epicsInt32 iValue)
                             asynPrint(pasynUser, ASYN_TRACE_ERROR, "mccdaqhats::writeInt32 - cannot stop MCC118\n");
                             iResult = asynError;
                         }
+                        mcc118_a_in_scan_cleanup(pParam->byAddress);
                     }
                     else if (!bStarted && m_abyChannelMask[pParam->byAddress])
                     {
@@ -1145,6 +1146,7 @@ asynStatus mccdaqhatsCtrl::writeInt32(asynUser* pasynUser, epicsInt32 iValue)
                             return asynError;
                         }
                         mcc118_a_in_scan_stop(pParam->byAddress);
+                        mcc118_a_in_scan_cleanup(pParam->byAddress);
                         if (dRate < 0.)
                         {
                             dTmp = -dTmp;
@@ -1164,6 +1166,7 @@ asynStatus mccdaqhatsCtrl::writeInt32(asynUser* pasynUser, epicsInt32 iValue)
                         if (mcc118_a_in_scan_start(pParam->byAddress, m_abyChannelMask[pParam->byAddress], 0, fabs(dRate), dwOptions) != RESULT_SUCCESS)
                         {
                             mcc118_a_in_scan_stop(pParam->byAddress);
+                            mcc118_a_in_scan_cleanup(pParam->byAddress);
                             asynPrint(pasynUser, ASYN_TRACE_ERROR, "mccdaqhats::writeInt32 - cannot start MCC118\n");
                             iResult = asynError;
                         }
@@ -1217,6 +1220,7 @@ asynStatus mccdaqhatsCtrl::writeInt32(asynUser* pasynUser, epicsInt32 iValue)
                             asynPrint(pasynUser, ASYN_TRACE_ERROR, "mccdaqhats::writeInt32 - cannot stop MCC128\n");
                             iResult = asynError;
                         }
+                        mcc128_a_in_scan_cleanup(pParam->byAddress);
                     }
                     else if (!bStarted && m_abyChannelMask[pParam->byAddress])
                     {
@@ -1253,6 +1257,7 @@ asynStatus mccdaqhatsCtrl::writeInt32(asynUser* pasynUser, epicsInt32 iValue)
                             return asynError;
                         }
                         mcc128_a_in_scan_stop(pParam->byAddress);
+                        mcc128_a_in_scan_cleanup(pParam->byAddress);
                         if (dRate < 0.)
                         {
                             dTmp = -dTmp;
@@ -1274,6 +1279,7 @@ asynStatus mccdaqhatsCtrl::writeInt32(asynUser* pasynUser, epicsInt32 iValue)
                         if (mcc128_a_in_scan_start(pParam->byAddress, m_abyChannelMask[pParam->byAddress], 0, fabs(dRate), dwOptions) != RESULT_SUCCESS)
                         {
                             mcc128_a_in_scan_stop(pParam->byAddress);
+                            mcc128_a_in_scan_cleanup(pParam->byAddress);
                             asynPrint(pasynUser, ASYN_TRACE_ERROR, "mccdaqhats::writeInt32 - start MCC128: cannot start\n");
                             iResult = asynError;
                         }
@@ -1439,6 +1445,7 @@ asynStatus mccdaqhatsCtrl::writeInt32(asynUser* pasynUser, epicsInt32 iValue)
                             asynPrint(pasynUser, ASYN_TRACE_ERROR, "mccdaqhats::writeInt32 - cannot stop MCC172\n");
                             iResult = asynError;
                         }
+                        mcc172_a_in_scan_cleanup(pParam->byAddress);
                     }
                     else if (!bStarted && m_abyChannelMask[pParam->byAddress])
                     {
@@ -1463,6 +1470,7 @@ asynStatus mccdaqhatsCtrl::writeInt32(asynUser* pasynUser, epicsInt32 iValue)
                             return asynError;
                         }
                         mcc172_a_in_scan_stop(pParam->byAddress);
+                        mcc172_a_in_scan_cleanup(pParam->byAddress);
                         if (iTrig > 0)
                             dwOptions |= OPTS_EXTTRIGGER;
                         if (mcc172_a_in_clock_config_write(pParam->byAddress, static_cast<uint8_t>(iClkSrc), dRate) != RESULT_SUCCESS)
@@ -1489,6 +1497,7 @@ asynStatus mccdaqhatsCtrl::writeInt32(asynUser* pasynUser, epicsInt32 iValue)
                         if (mcc172_a_in_scan_start(pParam->byAddress, m_abyChannelMask[pParam->byAddress], 0, dwOptions) != RESULT_SUCCESS)
                         {
                             mcc172_a_in_scan_stop(pParam->byAddress);
+                            mcc172_a_in_scan_cleanup(pParam->byAddress);
                             iResult = asynError;
                         }
                     }
