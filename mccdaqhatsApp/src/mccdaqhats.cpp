@@ -251,11 +251,11 @@ void mccdaqhatsCtrl::backgroundthread()
                     case MCCDAQHAT_C7:
                     {
                         int iChannel(static_cast<int>(p->iHatParam - MCCDAQHAT_C0));
-                        int iOffset(-1);
+                        size_t uOffset(0);
                         asynParamType iType(asynParamNotDefined);
-                        for (uint8_t j = 0; j < 8; ++j)
+                        for (int j = 0; j < 8 && j < iChannel; ++j)
                             if ((byMask >> j) & 1)
-                                ++iOffset;
+                                ++uOffset;
                         getParamType(p->iHatParam, &iType);
                         if (iType == asynParamFloat64Array)
                         {
@@ -264,7 +264,7 @@ void mccdaqhatsCtrl::backgroundthread()
                             if ((byMask >> iChannel) & 1)
                             {
                                 for (size_t j = 0; j < dwDataCount; ++j)
-                                    adChannel[j] = adData[static_cast<size_t>(byChannelCount) * j + static_cast<size_t>(iOffset)];
+                                    adChannel[j] = adData[static_cast<size_t>(byChannelCount) * j + uOffset];
                             }
                             std::swap(p->adCache, adChannel);
                             doCallbacksFloat64Array(&p->adCache[0], p->adCache.size(), p->iHatParam, 0);
@@ -588,7 +588,7 @@ handleMCC118:
                 szName = std::string(szPrefix) + std::string("_") + std::string(pParamList[i].szSuffix);
                 if (i < iNoSuffixList && iChannels > 0)
                 {
-                    p.iHatParam = static_cast<ParameterId>(static_cast<int>(p.iHatParam) + j);
+                    p.iHatParam = static_cast<ParameterId>(static_cast<int>(pParamList[i].iHatParam) + j);
                     szName += std::to_string(j);
                 }
                 else if (j > 0) break;
@@ -828,31 +828,49 @@ void mccdaqhatsCtrl::report(FILE* fp, int iLevel)
             portName, m_dTimeout);
     if (iLevel > 3)
     {
-      int iNumParams(0);
-      getNumParams(&iNumParams);
-      for (int i = 0; i < iNumParams; ++i)
-      {
-        const char* szName(nullptr);
-        asynParamType iType(asynParamNotDefined);
-        getParamName(i, &szName);
-        getParamType(i, &iType);
-        fprintf(fp, "  param%d:\t%s\ttype=%d", i, szName, iType);
-        switch (iType)
+        int iNumParams(0);
+        getNumParams(&iNumParams);
+        for (int i = 0; i < iNumParams; ++i)
         {
+            const char* szName(nullptr);
+            asynParamType iType(asynParamNotDefined);
+            getParamName(i, &szName);
+            getParamType(i, &iType);
+            fprintf(fp, "  param%d:\t%s\ttype=%d", i, szName, iType);
+            switch (iType)
+            {
 #define HANDLETYPE(as,ep,fun,var1,fmt,var2) case as:{ep v;fun(i,var1);fprintf(fp,fmt,var2);break;}
-          HANDLETYPE(asynParamInt32,epicsInt32,getIntegerParam,&v,"\tint32=%d",v)
-          HANDLETYPE(asynParamInt64,epicsInt64,getInteger64Param,&v,"\tint64=%lld",static_cast<long long>(v))
-          HANDLETYPE(asynParamFloat64,double,getDoubleParam,&v,"\tdouble=%g",v)
-          HANDLETYPE(asynParamOctet,std::string,getStringParam,v,"\tstring=%s",v.c_str())
+                HANDLETYPE(asynParamInt32,epicsInt32,getIntegerParam,&v,"\tint32=%d",v)
+                HANDLETYPE(asynParamInt64,epicsInt64,getInteger64Param,&v,"\tint64=%lld",static_cast<long long>(v))
+                HANDLETYPE(asynParamFloat64,double,getDoubleParam,&v,"\tdouble=%g",v)
+                HANDLETYPE(asynParamOctet,std::string,getStringParam,v,"\tstring=%s",v.c_str())
 #undef HANDLETYPE
-          case asynParamFloat64Array:
-            fprintf(fp, "\tdouble-array");
-            break;
-          default:
-            break;
+                case asynParamFloat64Array:
+                    fprintf(fp, "\tdouble-array");
+                    break;
+                default:
+                    break;
+            }
+            if (m_mapParameters.find(i) != m_mapParameters.end())
+            {
+                struct paramMccDaqHats* p(m_mapParameters[i]);
+                if (p)
+                {
+                    std::string sEnum;
+                    if (!p->sDescription.empty())
+                        fprintf(fp, " \"%s\"", p->sDescription.c_str());
+                    for (size_t j = 0; j < p->asEnum.size(); ++j)
+                    {
+                        if (j)
+                            sEnum += std::string("|");
+                        sEnum += p->asEnum[j];
+                    }
+                    if (!sEnum.empty())
+                        fprintf(fp, " enum %s", sEnum.c_str());
+                }
+            }
+            fprintf(fp, "\n");
         }
-        fprintf(fp, "\n");
-      }
     }
 }
 
