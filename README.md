@@ -1,7 +1,7 @@
 EPICS support for Measurement Computing Corporation daq hats for Raspberry Pi
 =============================================================================
 
-vendor:
+vendor of hats:
   * Measurement Computing Corporation
     <https://www.mccdaq.com/>
   * now Digilent
@@ -28,4 +28,8 @@ possible types:
 
 some types might blink the status LED (118,128,152,172)
 
-Github library <https://github.com/mccdaq/daqhats>
+required Github library <https://github.com/mccdaq/daqhats>
+
+required EPICS <https://epics-controls.org/>
+  * base <https://github.com/epics-base/epics-base>
+  * asyn <https://github.com/epics-modules/asyn>

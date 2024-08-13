@@ -1,8 +1,6 @@
 /*
  * SPDX-License-Identifier: EPICS
- *
- * Helmholtz-Zentrum Berlin fuer Materialien und Energie GmbH 2023
- *
+ * Helmholtz-Zentrum Berlin fuer Materialien und Energie GmbH 2023-2024
  * Lutz Rossa <rossa@helmholtz-berlin.de>
  */
 #include <stdio.h>
@@ -534,7 +532,6 @@ handleMCC118:
                 iListCount = ARRAY_SIZE(aMCC172Params);
                 iNoSuffixList = 4;
                 break;
-//#pragma message(CPP_WARNINGPREFIX "TODO - optionally extend hardware list here")
             default:
                 printf("    unknown ID\n");
                 break;

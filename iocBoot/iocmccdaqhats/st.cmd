@@ -1,6 +1,7 @@
 #!../../bin/linux-arm/mccdaqhats
 # SPDX-License-Identifier: EPICS
-# Helmholtz-Zentrum Berlin fuer Materialien und Energie GmbH 2023
+# Helmholtz-Zentrum Berlin fuer Materialien und Energie GmbH 2023-2024
+# Lutz Rossa <rossa@helmholtz-berlin.de>
 
 < envPaths
 

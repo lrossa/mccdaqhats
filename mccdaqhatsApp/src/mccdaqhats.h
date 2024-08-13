@@ -1,6 +1,7 @@
 /*
  * SPDX-License-Identifier: EPICS
- * Helmholtz-Zentrum Berlin fuer Materialien und Energie GmbH 2023
+ * Helmholtz-Zentrum Berlin fuer Materialien und Energie GmbH 2023-2024
+ * Lutz Rossa <rossa@helmholtz-berlin.de>
  */
 #ifndef MCCDAQHATS_INCLUDED
 #define MCCDAQHATS_INCLUDED
@@ -43,7 +44,6 @@ public:
     void report(FILE* fp, int iLevel);
 
     virtual void backgroundthread();
-    //static void backgroundthread(mccdaqhatsCtrl* pThis);
     virtual void interrupt();
 
 protected:
