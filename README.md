@@ -2,13 +2,14 @@ EPICS support for Measurement Computing Corporation daq hats for Raspberry Pi
 =============================================================================
 
 vendor of hats:
+
   * Measurement Computing Corporation
     <https://www.mccdaq.com/>
-  * now Digilent
+  * now Digilent (part of Emerson)
     <https://digilent.com/>
-  * now Emerson
 
 possible types:
+
   * MCC118:
     8-ch 12-bit 100kS/s analog input, single ended -10V…+10V
     common clock input/output, common trigger input
@@ -31,5 +32,6 @@ some types might blink the status LED (118,128,152,172)
 required Github library <https://github.com/mccdaq/daqhats>
 
 required EPICS <https://epics-controls.org/>
+
   * base <https://github.com/epics-base/epics-base>
   * asyn <https://github.com/epics-modules/asyn>
