@@ -1,8 +1,12 @@
+.gitignore
+mccdaqhatsApp/src/Makefile
 mccdaqhatsApp/src/O.linux-x86_64/mccdaqhats_registerRecordDeviceDriver.cpp
 mccdaqhatsApp/src/mccdaqhatsMain.cpp
 mccdaqhatsApp/src/mccdaqhats.cpp
 mccdaqhatsApp/src/mccdaqhats.h
+mccdaqhatsApp/src/mccdaqhatsSupport.dbd
 iocBoot/iocmccdaqhats/st.cmd
+README.md
 /hzb/dcy/Projekte/mccdaqhats/include/daqhats.h
 /hzb/dcy/Projekte/mccdaqhats/include/makefile
 /hzb/dcy/Projekte/mccdaqhats/include/mcc118.h

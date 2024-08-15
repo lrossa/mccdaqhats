@@ -175,16 +175,6 @@ mccdaqhatsCtrl::~mccdaqhatsCtrl()
 }
 
 /**
- * @brief this is a wrapper for real implementation "mccdaqhatsCtrl::backgroundthread"
- */
-void mccdaqhatsCtrl::backgroundthreadfunc(void* pParameter)
-{
-    mccdaqhatsCtrl* pMeMyselfAndI(reinterpret_cast<mccdaqhatsCtrl*>(pParameter));
-    if (pMeMyselfAndI)
-        pMeMyselfAndI->backgroundthread();
-}
-
-/**
  * @brief mccdaqhatsCtrl::backgroundthread is called in background for fetching data from hardware
  */
 void mccdaqhatsCtrl::backgroundthread()
@@ -281,21 +271,32 @@ void mccdaqhatsCtrl::backgroundthread()
 }
 
 /**
- * @brief this is a wrapper for real implementation "mccdaqhatsCtrl::interrupt"
- */
-void mccdaqhatsCtrl::interruptfunc(void* pParameter)
-{
-    mccdaqhatsCtrl* pMeMyselfAndI(reinterpret_cast<mccdaqhatsCtrl*>(pParameter));
-    if (pMeMyselfAndI)
-        pMeMyselfAndI->interrupt();
-}
-
-/**
  * @brief mccdaqhatsCtrl::interrupt is called in background from hardware
  */
 void mccdaqhatsCtrl::interrupt()
 {
-#pragma message(CPP_WARNINGPREFIX "TODO - handle interrupts")
+    for (auto it1 = m_mapControllers.begin(); it1 != m_mapControllers.end(); ++it1)
+    {
+        mccdaqhatsCtrl* pCtrl((*it1).second);
+        bool bChange(false);
+        if (!pCtrl)
+            continue;
+        pCtrl->lock();
+        for (auto it2 = pCtrl->m_mapParameters.begin(); it2 != pCtrl->m_mapParameters.end(); ++it2)
+        {
+            struct paramMccDaqHats* pParam((*it2).second);
+            uint8_t byValue(0);
+            if (pParam->wHatID != HAT_ID_MCC_152 || pParam->iHatParam != MCCDAQHAT_DI)
+                continue;
+            mcc152_dio_input_read_port(pParam->byAddress, &byValue);
+            pCtrl->setIntegerParam(pParam->iAsynReason, byValue);
+            mcc152_dio_int_status_read_port(pParam->byAddress, &byValue);
+            bChange = true;
+        }
+        if (bChange)
+            pCtrl->callParamCallbacks();
+        pCtrl->unlock();
+    }
 }
 
 /**
@@ -501,8 +502,6 @@ handleMCC118:
                 iNoSuffixList = 4;
                 break;
             case HAT_ID_MCC_152: // 2-ch 12 bit analog output, 8-ch digital I/O
-#pragma message(CPP_WARNINGPREFIX "TODO - MCC 152")
-#pragma message(CPP_WARNINGPREFIX "TODO - interrupt --> update + callParamCallbacks")
                 if (mcc152_open(pInfo->address) != RESULT_SUCCESS)
                 {
                     printf("    cannot open MCC 152\n");
@@ -555,7 +554,9 @@ handleMCC118:
                 fprintf(stderr, "cannot create new controller\n");
                 break;
             }
+            pC->lock();
         }
+        hat_interrupt_callback_enable(&mccdaqhatsCtrl::interruptfunc, static_cast<void*>(pC));
         if (pInfo->address >= pC->m_abyChannelMask.size())
             pC->m_abyChannelMask.resize(static_cast<size_t>(pInfo->address) + 1, 0);
         pC->m_abyChannelMask[pInfo->address] = static_cast<uint8_t>((1 << iChannels) - 1);
@@ -717,7 +718,7 @@ handleMCC118:
                                 pC->setIntegerParam(p.iAsynReason, pC->m_abyChannelMask[p.byAddress]);
                                 break;
 
-#define HANDLE_MCC152_DATA(param,func,errmsg)   \
+#define HANDLE_MCC152_DATA(param,func)   \
                             case MCCDAQHAT_##param:     \
                             {                           \
                                 uint8_t byValue(0);     \
@@ -725,7 +726,7 @@ handleMCC118:
                                     pC->setIntegerParam(p.iAsynReason, byValue); \
                                 break;                  \
                             }
-#define HANDLE_MCC152_CONF(param,item,errmsg)   \
+#define HANDLE_MCC152_CONF(param,item)   \
                             case MCCDAQHAT_##param:     \
                             {                           \
                                 uint8_t byValue(0);     \
@@ -733,17 +734,24 @@ handleMCC118:
                                     pC->setIntegerParam(p.iAsynReason, byValue); \
                                 break;                  \
                             }
-                            HANDLE_MCC152_DATA(DI,input,"digital inputs")
-                            HANDLE_MCC152_DATA(DO,output,"digital outputs")
-                            HANDLE_MCC152_CONF(DIR,DIRECTION,"direction")
-                            HANDLE_MCC152_CONF(IN_PULL_EN,PULL_ENABLE,"pull-up direction")
-                            HANDLE_MCC152_CONF(IN_PULL_CFG,PULL_CONFIG,"pull-up configuration")
-                            HANDLE_MCC152_CONF(IN_INV,INPUT_INVERT,"data invertion")
-                            HANDLE_MCC152_CONF(IN_LATCH,INPUT_LATCH,"latch configuration")
-                            HANDLE_MCC152_CONF(OUT_TYPE,OUTPUT_TYPE,"output configuration")
+                            HANDLE_MCC152_DATA(DI,input)
+                            HANDLE_MCC152_DATA(DO,output)
+                            HANDLE_MCC152_CONF(DIR,DIRECTION)
+                            HANDLE_MCC152_CONF(IN_PULL_EN,PULL_ENABLE)
+                            HANDLE_MCC152_CONF(IN_PULL_CFG,PULL_CONFIG)
+                            HANDLE_MCC152_CONF(IN_INV,INPUT_INVERT)
+                            HANDLE_MCC152_CONF(IN_LATCH,INPUT_LATCH)
+                            HANDLE_MCC152_CONF(OUT_TYPE,OUTPUT_TYPE)
 #undef HANDLE_MCC152_CONF
 #undef HANDLE_MCC152_DATA
                             default: break;
+                        }
+                        if (pParamList[i].iHatParam == MCCDAQHAT_DI)
+                        {
+                            uint8_t byValue(0);
+                            mcc152_dio_config_write_port(pInfo->address, DIO_INT_MASK, 0); // enable interrupts
+                            mcc152_dio_int_status_read_port(pInfo->address, &byValue);
+                            mcc152_dio_input_read_port(pInfo->address, &byValue); // clear previous interrupts
                         }
                         break;
                     case HAT_ID_MCC_172: // 2-ch 24 bit differential analog input
@@ -814,6 +822,7 @@ handleMCC118:
         while (pC->m_hThread == static_cast<epicsThreadId>(0))
             epicsThreadSleep(0.1);
         pC->callParamCallbacks();
+        pC->unlock();
     }
 }
 
@@ -1875,23 +1884,23 @@ void mccdaqhatsCtrl::writeDB(const iocshArgBuf* pArgs)
     if (szFilename && !*szFilename) szFilename = nullptr;
     if (szAsynPort)
     {
-        for (auto it = m_mapControllers.begin(); it != m_mapControllers.end(); ++it)
+        if (m_mapControllers.empty())
+            uCount = 0;
+        else
         {
-            mccdaqhatsCtrl* pCtrl((*it).second);
-            if (!pCtrl)
-                continue;
-            if (!epicsStrCaseCmp(szAsynPort, pCtrl->portName))
+            for (auto it = m_mapControllers.begin(); it != m_mapControllers.end(); ++it)
             {
-                pInstance = pCtrl;
-                break;
+                mccdaqhatsCtrl* pCtrl((*it).second);
+                if (!pCtrl)
+                    continue;
+                if (!strcmp(szAsynPort, pCtrl->portName))
+                {
+                    pInstance = pCtrl;
+                    uCount = 1;
+                    break;
+                }
             }
         }
-        if (!pInstance)
-        {
-            fprintf(stderr, "port %s was not found or is no MCC HAT support\n", szAsynPort);
-            return;
-        }
-        uCount = 1;
     }
     else
     {
@@ -1982,8 +1991,8 @@ void mccdaqhatsCtrl::writeDB(const iocshArgBuf* pArgs)
                 {
                     case asynParamInt32:
                     case asynParamInt64:
-                    case asynParamUInt32Digital: szRecordType = pParam->bWritable ? "longout" : "longin";     break;
-                    case asynParamFloat64:       szRecordType = pParam->bWritable ? "ao" : "ai";              break;
+                    case asynParamUInt32Digital: szRecordType = pParam->bWritable ? "longout"   : "longin";   break;
+                    case asynParamFloat64:       szRecordType = pParam->bWritable ? "ao"        : "ai";       break;
                     case asynParamOctet:         szRecordType = pParam->bWritable ? "stringout" : "stringin"; break;
                     case asynParamInt8Array:     szRecordType = pParam->bWritable ? "aao" : "aai"; szAdditional = "field(FTVL, \"CHAR\")\nfield (NELM, \"$(NELM=10000)\")\n";  break;
                     case asynParamInt16Array:    szRecordType = pParam->bWritable ? "aao" : "aai"; szAdditional = "field(FTVL, \"SHORT\")\nfield (NELM, \"$(NELM=10000)\")\n"; break;
@@ -1991,12 +2000,6 @@ void mccdaqhatsCtrl::writeDB(const iocshArgBuf* pArgs)
                     case asynParamInt64Array:    szRecordType = pParam->bWritable ? "aao" : "aai"; szAdditional = "field(FTVL, \"INT64\")\nfield (NELM, \"$(NELM=10000)\")\n"; break;
                     case asynParamFloat32Array:  szRecordType = pParam->bWritable ? "aao" : "aai"; szAdditional = "field(FTVL, \"FLOAT\")\nfield (NELM, \"$(NELM=10000)\")\n"; break;
                     case asynParamFloat64Array:  szRecordType = pParam->bWritable ? "aao" : "aai"; szAdditional = "field(FTVL, \"DOUBLE\")\nfield (NELM, \"$(NELM=10000)\")\n"; break;
-                        // record(aai,
-                        // record(aao,
-                        // field(TSE,
-                        // field(FTVL,
-                        // field(NELM,
-                        // !info(asyn:FIFO,
                     default:
                         break;
                 }
@@ -2010,7 +2013,7 @@ void mccdaqhatsCtrl::writeDB(const iocshArgBuf* pArgs)
             fprintf(pOutfile, "# %u %s: 0x%x %s\n", pParam->byAddress, szParamName, pParam->wHatID, szHatType);
             fprintf(pOutfile, "record(%s, \"$(P):%s\")\n{\n", szRecordType, szParamName);
             fprintf(pOutfile, "  field(DTYP, \"%s\")\n", szDTYP);
-            fprintf(pOutfile, "  field(%s, \"@asyn(%s,0,1)%s\")\n", pParam->bWritable ? "OUT" : "INP", pCtrl->portName, szParamName);
+            fprintf(pOutfile, "  field(%s, \"@asyn($(PORT=%s),0,1)%s\")\n", pParam->bWritable ? "OUT" : "INP", pCtrl->portName, szParamName);
             if (!pParam->sDescription.empty())
                 fprintf(pOutfile, "  field(DESC, \"%s\")\n", pParam->sDescription.c_str());
             if (pParam->bWritable)

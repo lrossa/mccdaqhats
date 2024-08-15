@@ -59,8 +59,13 @@ protected:
     epicsFloat64 GetDevParamDouble(uint8_t byAddress, int iParam, epicsFloat64 dDefaultValue);
 
 private:
-    static void backgroundthreadfunc(void* pParameter);
-    static void interruptfunc(void* pParameter);
+    /// @brief this is a wrapper for real implementation "mccdaqhatsCtrl::backgroundthread"
+    static void backgroundthreadfunc(void* pParameter)
+        { mccdaqhatsCtrl* pMeMyselfAndI(reinterpret_cast<mccdaqhatsCtrl*>(pParameter)); if (pMeMyselfAndI) pMeMyselfAndI->backgroundthread(); }
+
+    /// @brief this is a wrapper for real implementation "mccdaqhatsCtrl::interrupt"
+    static void interruptfunc(void* pParameter)
+        { mccdaqhatsCtrl* pMeMyselfAndI(reinterpret_cast<mccdaqhatsCtrl*>(pParameter)); if (pMeMyselfAndI) pMeMyselfAndI->interrupt(); }
 };
 
 #endif /*MCCDAQHATS_INCLUDED*/
