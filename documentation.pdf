@@ -1,0 +1,3481 @@
+%PDF-1.4
+%“Œ‹ž ReportLab Generated PDF document http://www.reportlab.com
+1 0 obj
+<<
+/F1 2 0 R /F2 3 0 R /F3 4 0 R /F4 8 0 R
+>>
+endobj
+2 0 obj
+<<
+/BaseFont /Helvetica /Encoding /WinAnsiEncoding /Name /F1 /Subtype /Type1 /Type /Font
+>>
+endobj
+3 0 obj
+<<
+/BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding /Name /F2 /Subtype /Type1 /Type /Font
+>>
+endobj
+4 0 obj
+<<
+/BaseFont /Helvetica-Oblique /Encoding /WinAnsiEncoding /Name /F3 /Subtype /Type1 /Type /Font
+>>
+endobj
+5 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://www.mccdaq.com/)
+>> /Border [ 0 0 0 ] /Rect [ 281.5929 639.0236 395.5129 651.0236 ] /Subtype /Link /Type /Annot
+>>
+endobj
+6 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://digilent.com/)
+>> /Border [ 0 0 0 ] /Rect [ 249.3529 621.0236 335.5029 633.0236 ] /Subtype /Link /Type /Annot
+>>
+endobj
+7 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://www.raspberrypi.com/software)
+>> /Border [ 0 0 0 ] /Rect [ 280.5629 381.0236 362.8028 393.0236 ] /Subtype /Link /Type /Annot
+>>
+endobj
+8 0 obj
+<<
+/BaseFont /Courier /Encoding /WinAnsiEncoding /Name /F4 /Subtype /Type1 /Type /Font
+>>
+endobj
+9 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/mccdaq/daqhats)
+>> /Border [ 0 0 0 ] /Rect [ 141.0629 165.0236 164.4762 177.0236 ] /Subtype /Link /Type /Annot
+>>
+endobj
+10 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://epics-controls.org/)
+>> /Border [ 0 0 0 ] /Rect [ 232.2329 93.02362 253.3811 105.0236 ] /Subtype /Link /Type /Annot
+>>
+endobj
+11 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/epics-base/epics-base)
+>> /Border [ 0 0 0 ] /Rect [ 422.3329 93.02362 446.9721 105.0236 ] /Subtype /Link /Type /Annot
+>>
+endobj
+12 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/epics-modules/asyn)
+>> /Border [ 0 0 0 ] /Rect [ 466.2529 93.02362 490.7874 105.0236 ] /Subtype /Link /Type /Annot
+>>
+endobj
+13 0 obj
+<<
+/Annots [ 5 0 R 6 0 R 7 0 R 9 0 R 10 0 R 11 0 R 12 0 R ] /Contents 40 0 R /MediaBox [ 0 0 595.2756 841.8898 ] /Parent 39 0 R /Resources <<
+/Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+>> /Rotate 0 
+  /Trans <<
+
+>> /Type /Page
+>>
+endobj
+14 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/lrossa/mccdaqhats)
+>> /Border [ 0 0 0 ] /Rect [ 139.4029 459.0236 180.3771 471.0236 ] /Subtype /Link /Type /Annot
+>>
+endobj
+15 0 obj
+<<
+/Annots [ 14 0 R ] /Contents 41 0 R /MediaBox [ 0 0 595.2756 841.8898 ] /Parent 39 0 R /Resources <<
+/Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+>> /Rotate 0 
+  /Trans <<
+
+>> /Type /Page
+>>
+endobj
+16 0 obj
+<<
+/Contents 42 0 R /MediaBox [ 0 0 595.2756 841.8898 ] /Parent 39 0 R /Resources <<
+/Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+>> /Rotate 0 /Trans <<
+
+>> 
+  /Type /Page
+>>
+endobj
+17 0 obj
+<<
+/Contents 43 0 R /MediaBox [ 0 0 595.2756 841.8898 ] /Parent 39 0 R /Resources <<
+/Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+>> /Rotate 0 /Trans <<
+
+>> 
+  /Type /Page
+>>
+endobj
+18 0 obj
+<<
+/Contents 44 0 R /MediaBox [ 0 0 595.2756 841.8898 ] /Parent 39 0 R /Resources <<
+/Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+>> /Rotate 0 /Trans <<
+
+>> 
+  /Type /Page
+>>
+endobj
+19 0 obj
+<<
+/Contents 45 0 R /MediaBox [ 0 0 595.2756 841.8898 ] /Parent 39 0 R /Resources <<
+/Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+>> /Rotate 0 /Trans <<
+
+>> 
+  /Type /Page
+>>
+endobj
+20 0 obj
+<<
+/Outlines 22 0 R /PageLabels 46 0 R /PageMode /UseNone /Pages 39 0 R /Type /Catalog
+>>
+endobj
+21 0 obj
+<<
+/Author () /CreationDate (D:20240817154252+00'00') /Creator (\(unspecified\)) /Keywords () /ModDate (D:20240817154252+00'00') /Producer (ReportLab PDF Library - www.reportlab.com) 
+  /Subject (\(unspecified\)) /Title () /Trapped /False
+>>
+endobj
+22 0 obj
+<<
+/Count 17 /First 23 0 R /Last 24 0 R /Type /Outlines
+>>
+endobj
+23 0 obj
+<<
+/Dest [ 13 0 R /XYZ 62.69291 765.0236 0 ] /Next 24 0 R /Parent 22 0 R /Title (0. Overview)
+>>
+endobj
+24 0 obj
+<<
+/Count 14 /Dest [ 13 0 R /XYZ 62.69291 462.0236 0 ] /First 25 0 R /Last 38 0 R /Parent 22 0 R /Prev 23 0 R 
+  /Title (1. Requirements)
+>>
+endobj
+25 0 obj
+<<
+/Dest [ 13 0 R /XYZ 62.69291 429.0236 0 ] /Next 26 0 R /Parent 24 0 R /Title (1.1. Raspberry PI)
+>>
+endobj
+26 0 obj
+<<
+/Dest [ 13 0 R /XYZ 62.69291 201.0236 0 ] /Next 27 0 R /Parent 24 0 R /Prev 25 0 R /Title (1.2. required MCC library)
+>>
+endobj
+27 0 obj
+<<
+/Dest [ 13 0 R /XYZ 62.69291 129.0236 0 ] /Next 28 0 R /Parent 24 0 R /Prev 26 0 R /Title (1.3. required EPICS)
+>>
+endobj
+28 0 obj
+<<
+/Dest [ 15 0 R /XYZ 62.69291 525.0236 0 ] /Next 29 0 R /Parent 24 0 R /Prev 27 0 R /Title (2. MCC DAQ hats support module)
+>>
+endobj
+29 0 obj
+<<
+/Dest [ 15 0 R /XYZ 62.69291 495.0236 0 ] /Next 30 0 R /Parent 24 0 R /Prev 28 0 R /Title (2.1. Cloning and configuring)
+>>
+endobj
+30 0 obj
+<<
+/Dest [ 15 0 R /XYZ 62.69291 231.0236 0 ] /Next 31 0 R /Parent 24 0 R /Prev 29 0 R /Title (2.2. Compiling)
+>>
+endobj
+31 0 obj
+<<
+/Dest [ 16 0 R /XYZ 62.69291 765.0236 0 ] /Next 32 0 R /Parent 24 0 R /Prev 30 0 R /Title (2.3. Using)
+>>
+endobj
+32 0 obj
+<<
+/Dest [ 16 0 R /XYZ 62.69291 273.0236 0 ] /Next 33 0 R /Parent 24 0 R /Prev 31 0 R /Title (3. Automatically generated parameters)
+>>
+endobj
+33 0 obj
+<<
+/Dest [ 16 0 R /XYZ 62.69291 243.0236 0 ] /Next 34 0 R /Parent 24 0 R /Prev 32 0 R /Title (3.1. Naming scheme)
+>>
+endobj
+34 0 obj
+<<
+/Dest [ 17 0 R /XYZ 62.69291 765.0236 0 ] /Next 35 0 R /Parent 24 0 R /Prev 33 0 R /Title (3.2. MCC118 analog input)
+>>
+endobj
+35 0 obj
+<<
+/Dest [ 17 0 R /XYZ 62.69291 423.0236 0 ] /Next 36 0 R /Parent 24 0 R /Prev 34 0 R /Title (3.3. MCC128 analog input)
+>>
+endobj
+36 0 obj
+<<
+/Dest [ 18 0 R /XYZ 62.69291 645.0236 0 ] /Next 37 0 R /Parent 24 0 R /Prev 35 0 R /Title (3.4. MCC134 thermocouple input)
+>>
+endobj
+37 0 obj
+<<
+/Dest [ 18 0 R /XYZ 62.69291 429.0236 0 ] /Next 38 0 R /Parent 24 0 R /Prev 36 0 R /Title (3.5. MCC152 analog output, digital I/O)
+>>
+endobj
+38 0 obj
+<<
+/Dest [ 18 0 R /XYZ 62.69291 123.0236 0 ] /Parent 24 0 R /Prev 37 0 R /Title (3.6. MCC172 analog input)
+>>
+endobj
+39 0 obj
+<<
+/Count 6 /Kids [ 13 0 R 15 0 R 16 0 R 17 0 R 18 0 R 19 0 R ] /Type /Pages
+>>
+endobj
+40 0 obj
+<<
+/Length 8383
+>>
+stream
+1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
+q
+1 0 0 1 62.69291 744.0236 cm
+q
+BT 1 0 0 1 0 3.5 Tm 21 TL /F2 17.5 Tf 0 0 0 rg (0. Overview) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 732.0236 cm
+Q
+q
+1 0 0 1 62.69291 717.0236 cm
+q
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F2 10 Tf 12 TL 38.59937 0 Td (author:) Tj T* -38.59937 0 Td ET
+Q
+Q
+q
+1 0 0 1 91.03937 3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (Lutz Rossa) Tj T* ET
+Q
+Q
+q
+Q
+Q
+Q
+q
+1 0 0 1 62.69291 702.0236 cm
+q
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F2 10 Tf 12 TL 34.13937 0 Td (version:) Tj T* -34.13937 0 Td ET
+Q
+Q
+q
+1 0 0 1 91.03937 3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (0.2 of 2024-08-17) Tj T* ET
+Q
+Q
+q
+Q
+Q
+Q
+q
+1 0 0 1 62.69291 684.0236 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F2 10 Tf 12 TL (EPICS support for Measurement Computing Corporation daq hats for Raspberry Pi) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 666.0236 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F3 10 Tf 12 TL (vendor of hats:) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 660.0236 cm
+Q
+q
+1 0 0 1 62.69291 624.0236 cm
+q
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+BT 1 0 0 1 0 2 Tm  T* ET
+q
+1 0 0 1 20 30 cm
+Q
+q
+1 0 0 1 20 30 cm
+Q
+q
+1 0 0 1 20 18 cm
+q
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 10.5 0 Td (\177) Tj T* -10.5 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 -3 cm
+q
+BT 1 0 0 1 0 2 Tm 12 TL /F1 10 Tf 0 0 0 rg (Measurement Computing Corporation <) Tj 0 0 .501961 rg (https://www.mccdaq.com/) Tj 0 0 0 rg (>) Tj T* ET
+Q
+Q
+q
+Q
+Q
+Q
+q
+1 0 0 1 20 12 cm
+Q
+q
+1 0 0 1 20 0 cm
+q
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 10.5 0 Td (\177) Tj T* -10.5 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 -3 cm
+q
+BT 1 0 0 1 0 2 Tm 12 TL /F1 10 Tf 0 0 0 rg (now Digilent \(part of Emerson\) <) Tj 0 0 .501961 rg (https://digilent.com/) Tj 0 0 0 rg (>) Tj T* ET
+Q
+Q
+q
+Q
+Q
+Q
+q
+1 0 0 1 20 0 cm
+Q
+q
+Q
+Q
+Q
+q
+1 0 0 1 62.69291 624.0236 cm
+Q
+q
+1 0 0 1 62.69291 606.0236 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F3 10 Tf 12 TL (possible types:) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 600.0236 cm
+Q
+q
+1 0 0 1 62.69291 474.0236 cm
+q
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+BT 1 0 0 1 0 2 Tm  T* ET
+q
+1 0 0 1 20 120 cm
+Q
+q
+1 0 0 1 20 120 cm
+Q
+q
+1 0 0 1 20 96 cm
+q
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 9 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 10.5 0 Td (\177) Tj T* -10.5 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 14 Tm /F1 10 Tf 12 TL 5.087976 Tw (MCC118: 8-ch 12-bit 100kS/s analog input, single ended -10V...+10V, common clock) Tj T* 0 Tw (input/output, common trigger input) Tj T* ET
+Q
+Q
+q
+Q
+Q
+Q
+q
+1 0 0 1 20 90 cm
+Q
+q
+1 0 0 1 20 54 cm
+q
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 21 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 10.5 0 Td (\177) Tj T* -10.5 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 26 Tm /F1 10 Tf 12 TL 1.197674 Tw (MCC128: 8-ch 16-bit 100kS/s analog input, single ended or 4-ch 16-bit 100kS/s analog input,) Tj T* 0 Tw 1.38997 Tw (differential, -10V...+10V, -5V...+5V, -2V...+2V, -1V...+1V, common clock input/output, common) Tj T* 0 Tw (trigger input) Tj T* ET
+Q
+Q
+q
+Q
+Q
+Q
+q
+1 0 0 1 20 48 cm
+Q
+q
+1 0 0 1 20 36 cm
+q
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 10.5 0 Td (\177) Tj T* -10.5 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (MCC134: 4-ch 24-bit thermocouple input) Tj T* ET
+Q
+Q
+q
+Q
+Q
+Q
+q
+1 0 0 1 20 30 cm
+Q
+q
+1 0 0 1 20 18 cm
+q
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 10.5 0 Td (\177) Tj T* -10.5 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (MCC152: 2-ch 12-bit analog output 0V...5V, 8-ch bit-configureable digital I/O) Tj T* ET
+Q
+Q
+q
+Q
+Q
+Q
+q
+1 0 0 1 20 12 cm
+Q
+q
+1 0 0 1 20 0 cm
+q
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 10.5 0 Td (\177) Tj T* -10.5 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (MCC172: 2-ch 24-bit 51.2kS/s analog input, differential -5V...+5V, common trigger input) Tj T* ET
+Q
+Q
+q
+Q
+Q
+Q
+q
+1 0 0 1 20 0 cm
+Q
+q
+Q
+Q
+Q
+q
+1 0 0 1 62.69291 474.0236 cm
+Q
+q
+1 0 0 1 62.69291 441.0236 cm
+q
+BT 1 0 0 1 0 3.5 Tm 21 TL /F2 17.5 Tf 0 0 0 rg (1. Requirements) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 411.0236 cm
+q
+BT 1 0 0 1 0 3 Tm 18 TL /F2 15 Tf 0 0 0 rg (1.1. Raspberry PI) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 369.0236 cm
+q
+BT 1 0 0 1 0 26 Tm .941318 Tw 12 TL /F1 10 Tf 0 0 0 rg (This should be self-explaining for intended use of the hardware. If possible, install an operating system,) Tj T* 0 Tw .76498 Tw (which is supported by EPICS \(see next chapter\). ) Tj 0 0 .501961 rg (Raspberry-Pi-OS) Tj 0 0 0 rg ( \(Linux\) is recommended. Additionally) Tj T* 0 Tw (these packets should be installed on this Linux system:) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 363.0236 cm
+Q
+q
+1 0 0 1 62.69291 291.0236 cm
+q
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+BT 1 0 0 1 0 2 Tm  T* ET
+q
+1 0 0 1 20 66 cm
+Q
+q
+1 0 0 1 20 66 cm
+Q
+q
+1 0 0 1 20 54 cm
+q
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 10.5 0 Td (\177) Tj T* -10.5 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F4 10 Tf 12 TL (git) Tj T* ET
+Q
+Q
+q
+Q
+Q
+Q
+q
+1 0 0 1 20 48 cm
+Q
+q
+1 0 0 1 20 36 cm
+q
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 10.5 0 Td (\177) Tj T* -10.5 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 -3 cm
+q
+BT 1 0 0 1 0 2 Tm 12 TL /F4 10 Tf 0 0 0 rg (g++) Tj /F1 10 Tf ( \(GNU C++ compiler\)) Tj T* ET
+Q
+Q
+q
+Q
+Q
+Q
+q
+1 0 0 1 20 30 cm
+Q
+q
+1 0 0 1 20 18 cm
+q
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 10.5 0 Td (\177) Tj T* -10.5 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 -3 cm
+q
+BT 1 0 0 1 0 2 Tm 12 TL /F4 10 Tf 0 0 0 rg (make) Tj /F1 10 Tf ( \(GNU make\)) Tj T* ET
+Q
+Q
+q
+Q
+Q
+Q
+q
+1 0 0 1 20 12 cm
+Q
+q
+1 0 0 1 20 0 cm
+q
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 10.5 0 Td (\177) Tj T* -10.5 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 -3 cm
+q
+BT 1 0 0 1 0 2 Tm 12 TL /F1 10 Tf 0 0 0 rg (optional ) Tj /F4 10 Tf (libreadline-dev) Tj /F1 10 Tf ( \(GNU readline and history\)) Tj T* ET
+Q
+Q
+q
+Q
+Q
+Q
+q
+1 0 0 1 20 0 cm
+Q
+q
+Q
+Q
+Q
+q
+1 0 0 1 62.69291 291.0236 cm
+Q
+q
+1 0 0 1 62.69291 261.0236 cm
+q
+BT 1 0 0 1 0 14 Tm 1.577045 Tw 12 TL /F1 10 Tf 0 0 0 rg (This documentation often says to use ) Tj /F4 10 Tf (make) Tj /F1 10 Tf (, which means to build the sources in the directory with a) Tj T* 0 Tw (terminal and using a single command line) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 255.0236 cm
+Q
+q
+1 0 0 1 62.69291 243.0236 cm
+q
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+BT 1 0 0 1 0 2 Tm  T* ET
+q
+1 0 0 1 20 0 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F4 10 Tf 12 TL (make) Tj T* ET
+Q
+Q
+q
+Q
+Q
+Q
+q
+1 0 0 1 62.69291 243.0236 cm
+Q
+q
+1 0 0 1 62.69291 213.0236 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 14 Tm /F1 10 Tf 12 TL .713672 Tw (. You could build the sources in different ways, if you know how. The output should not show any errors) Tj T* 0 Tw (while compiling or linking output files.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 183.0236 cm
+q
+BT 1 0 0 1 0 3 Tm 18 TL /F2 15 Tf 0 0 0 rg (1.2. required MCC library) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 141.0236 cm
+q
+BT 1 0 0 1 0 26 Tm .214431 Tw 12 TL /F1 10 Tf 0 0 0 rg (Please clone this ) Tj 0 0 .501961 rg (MCC) Tj 0 0 0 rg ( library with ) Tj /F4 10 Tf (git) Tj /F1 10 Tf ( into a separate directory and build it with ) Tj /F4 10 Tf (make) Tj /F1 10 Tf (. The library comes) Tj T* 0 Tw .747674 Tw (with a configuration tool ) Tj /F4 10 Tf (daqhats_read_eeproms) Tj /F1 10 Tf (, which should be used to read the installed modules) Tj T* 0 Tw (and store some required information.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 111.0236 cm
+q
+BT 1 0 0 1 0 3 Tm 18 TL /F2 15 Tf 0 0 0 rg (1.3. required EPICS) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 81.02362 cm
+q
+BT 1 0 0 1 0 14 Tm .227633 Tw 12 TL /F1 10 Tf 0 0 0 rg (EPICS documentation could be found ) Tj 0 0 .501961 rg (here) Tj 0 0 0 rg ( . You should clone the repositories of ) Tj 0 0 .501961 rg (base) Tj 0 0 0 rg ( and ) Tj 0 0 .501961 rg (asyn) Tj 0 0 0 rg ( with ) Tj /F4 10 Tf (git) Tj /F1 10 Tf  T* 0 Tw (into separate directories, called ) Tj /F3 10 Tf (<) Tj (base) Tj (>) Tj /F1 10 Tf ( and ) Tj /F3 10 Tf (<) Tj (asyn) Tj (>) Tj /F1 10 Tf ( here. To configure EPICS base, optionally modify file) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 76.86614 cm
+Q
+ 
+endstream
+endobj
+41 0 obj
+<<
+/Length 7795
+>>
+stream
+1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
+q
+1 0 0 1 62.69291 753.0236 cm
+q
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+BT 1 0 0 1 0 2 Tm  T* ET
+q
+1 0 0 1 20 0 cm
+q
+BT 1 0 0 1 0 2 Tm 12 TL /F3 10 Tf 0 0 0 rg (<) Tj (base) Tj (>) Tj (/configure/CONFIG_SITE) Tj T* ET
+Q
+Q
+q
+Q
+Q
+Q
+q
+1 0 0 1 62.69291 753.0236 cm
+Q
+q
+1 0 0 1 62.69291 735.0236 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (or put a local file) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 729.0236 cm
+Q
+q
+1 0 0 1 62.69291 717.0236 cm
+q
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+BT 1 0 0 1 0 2 Tm  T* ET
+q
+1 0 0 1 20 0 cm
+q
+BT 1 0 0 1 0 2 Tm 12 TL /F3 10 Tf 0 0 0 rg (<) Tj (base) Tj (>) Tj (/configure/CONFIG_SITE.local) Tj T* ET
+Q
+Q
+q
+Q
+Q
+Q
+q
+1 0 0 1 62.69291 717.0236 cm
+Q
+q
+1 0 0 1 62.69291 699.0236 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (with a single line) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 693.0236 cm
+Q
+q
+1 0 0 1 62.69291 681.0236 cm
+q
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+BT 1 0 0 1 0 2 Tm  T* ET
+q
+1 0 0 1 20 0 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F3 10 Tf 12 TL (BUILD_IOCS=YES) Tj T* ET
+Q
+Q
+q
+Q
+Q
+Q
+q
+1 0 0 1 62.69291 681.0236 cm
+Q
+q
+1 0 0 1 62.69291 663.0236 cm
+q
+BT 1 0 0 1 0 2 Tm 12 TL /F1 10 Tf 0 0 0 rg (and build it with ) Tj /F4 10 Tf (make) Tj /F1 10 Tf (.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 645.0236 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (To configure the asyn package, modify the file) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 639.0236 cm
+Q
+q
+1 0 0 1 62.69291 627.0236 cm
+q
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+BT 1 0 0 1 0 2 Tm  T* ET
+q
+1 0 0 1 20 0 cm
+q
+BT 1 0 0 1 0 2 Tm 12 TL /F3 10 Tf 0 0 0 rg (<) Tj (asyn) Tj (>) Tj (/configure/RELEASE) Tj T* ET
+Q
+Q
+q
+Q
+Q
+Q
+q
+1 0 0 1 62.69291 627.0236 cm
+Q
+q
+1 0 0 1 62.69291 609.0236 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (or put a local file) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 603.0236 cm
+Q
+q
+1 0 0 1 62.69291 591.0236 cm
+q
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+BT 1 0 0 1 0 2 Tm  T* ET
+q
+1 0 0 1 20 0 cm
+q
+BT 1 0 0 1 0 2 Tm 12 TL /F3 10 Tf 0 0 0 rg (<) Tj (base) Tj (>) Tj (/configure/RELEASE.local) Tj T* ET
+Q
+Q
+q
+Q
+Q
+Q
+q
+1 0 0 1 62.69291 591.0236 cm
+Q
+q
+1 0 0 1 62.69291 573.0236 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (and point to EPICS base with a single line \(absolute directory path\)) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 567.0236 cm
+Q
+q
+1 0 0 1 62.69291 555.0236 cm
+q
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+BT 1 0 0 1 0 2 Tm  T* ET
+q
+1 0 0 1 20 0 cm
+q
+BT 1 0 0 1 0 2 Tm 12 TL /F3 10 Tf 0 0 0 rg (EPICS_BASE=) Tj (<) Tj (base) Tj (>) Tj T* ET
+Q
+Q
+q
+Q
+Q
+Q
+q
+1 0 0 1 62.69291 555.0236 cm
+Q
+q
+1 0 0 1 62.69291 537.0236 cm
+q
+BT 1 0 0 1 0 2 Tm 12 TL /F1 10 Tf 0 0 0 rg (and build it with ) Tj /F4 10 Tf (make) Tj /F1 10 Tf (.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 507.0236 cm
+q
+BT 1 0 0 1 0 3 Tm 18 TL /F2 15 Tf 0 0 0 rg (2. MCC DAQ hats support module) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 477.0236 cm
+q
+BT 1 0 0 1 0 3 Tm 18 TL /F2 15 Tf 0 0 0 rg (2.1. Cloning and configuring) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 447.0236 cm
+q
+BT 1 0 0 1 0 14 Tm 2.541412 Tw 12 TL /F1 10 Tf 0 0 0 rg (Please clone the ) Tj 0 0 .501961 rg (support) Tj 0 0 0 rg ( module with ) Tj /F4 10 Tf (git) Tj /F1 10 Tf ( into a separate directory called ) Tj /F3 10 Tf (<) Tj (mccdaqhats) Tj (>) Tj /F1 10 Tf ( here. To) Tj T* 0 Tw (configure the support module, modify the file) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 441.0236 cm
+Q
+q
+1 0 0 1 62.69291 429.0236 cm
+q
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+BT 1 0 0 1 0 2 Tm  T* ET
+q
+1 0 0 1 20 0 cm
+q
+BT 1 0 0 1 0 2 Tm 12 TL /F3 10 Tf 0 0 0 rg (<) Tj (mccdaqhats) Tj (>) Tj (/configure/RELEASE) Tj T* ET
+Q
+Q
+q
+Q
+Q
+Q
+q
+1 0 0 1 62.69291 429.0236 cm
+Q
+q
+1 0 0 1 62.69291 411.0236 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (or put a local file) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 405.0236 cm
+Q
+q
+1 0 0 1 62.69291 393.0236 cm
+q
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+BT 1 0 0 1 0 2 Tm  T* ET
+q
+1 0 0 1 20 0 cm
+q
+BT 1 0 0 1 0 2 Tm 12 TL /F3 10 Tf 0 0 0 rg (<) Tj (mccdaqhats) Tj (>) Tj (/configure/RELEASE.local) Tj T* ET
+Q
+Q
+q
+Q
+Q
+Q
+q
+1 0 0 1 62.69291 393.0236 cm
+Q
+q
+1 0 0 1 62.69291 375.0236 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (and point to EPICS base with these lines \(absolute directory paths\)) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 369.0236 cm
+Q
+q
+1 0 0 1 62.69291 339.0236 cm
+q
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+BT 1 0 0 1 0 2 Tm  T* ET
+q
+1 0 0 1 20 18 cm
+q
+BT 1 0 0 1 0 2 Tm 12 TL /F3 10 Tf 0 0 0 rg (EPICS_BASE=) Tj (<) Tj (base) Tj (>) Tj T* ET
+Q
+Q
+q
+1 0 0 1 20 0 cm
+q
+BT 1 0 0 1 0 2 Tm 12 TL /F3 10 Tf 0 0 0 rg (ASYN=) Tj (<) Tj (asyn) Tj (>) Tj T* ET
+Q
+Q
+q
+Q
+Q
+Q
+q
+1 0 0 1 62.69291 339.0236 cm
+Q
+q
+1 0 0 1 62.69291 321.0236 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 291.0236 cm
+q
+BT 1 0 0 1 0 14 Tm -0.123024 Tw 12 TL /F1 10 Tf 0 0 0 rg (Please open the file ) Tj /F4 10 Tf (<) Tj (mccdaqhats) Tj (>) Tj (/iocBoot/iocmccdaqhats/st.cmd) Tj /F1 10 Tf ( in your favorite text editor and) Tj T* 0 Tw (go to the line starting with) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 285.0236 cm
+Q
+q
+1 0 0 1 62.69291 273.0236 cm
+q
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+BT 1 0 0 1 0 2 Tm  T* ET
+q
+1 0 0 1 20 0 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F4 10 Tf 12 TL (dbLoadRecords\("generated.db","P=pi,) Tj T* ET
+Q
+Q
+q
+Q
+Q
+Q
+q
+1 0 0 1 62.69291 273.0236 cm
+Q
+q
+1 0 0 1 62.69291 243.0236 cm
+q
+BT 1 0 0 1 0 14 Tm .316654 Tw 12 TL /F1 10 Tf 0 0 0 rg (and modify substition ) Tj /F4 10 Tf (P=pi) Tj /F1 10 Tf ( \(which is used as prefix\) into another EPICS prefix in your EPICS set up, e.g.) Tj T* 0 Tw /F4 10 Tf (PI=myprefix) Tj /F1 10 Tf ( or something better.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 213.0236 cm
+q
+BT 1 0 0 1 0 3 Tm 18 TL /F2 15 Tf 0 0 0 rg (2.2. Compiling) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 183.0236 cm
+q
+BT 1 0 0 1 0 14 Tm 1.676412 Tw 12 TL /F1 10 Tf 0 0 0 rg (Execute ) Tj /F4 10 Tf (make) Tj /F1 10 Tf ( in the directory ) Tj /F3 10 Tf (<) Tj (mccdaqhats) Tj (>) Tj /F1 10 Tf (, which should not produce an error message. The build) Tj T* 0 Tw (process should generated these directories/files:) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 177.0236 cm
+Q
+q
+1 0 0 1 62.69291 105.0236 cm
+q
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+BT 1 0 0 1 0 2 Tm  T* ET
+q
+1 0 0 1 20 66 cm
+Q
+q
+1 0 0 1 20 66 cm
+Q
+q
+1 0 0 1 20 54 cm
+q
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 10.5 0 Td (\177) Tj T* -10.5 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 -3 cm
+q
+BT 1 0 0 1 0 2 Tm 12 TL /F1 10 Tf 0 0 0 rg (file ) Tj /F4 10 Tf (<) Tj (mccdaqhats) Tj (>) Tj (/bin/linux-arm/mccdaqhats) Tj /F1 10 Tf ( : generated IOC) Tj T* ET
+Q
+Q
+q
+Q
+Q
+Q
+q
+1 0 0 1 20 48 cm
+Q
+q
+1 0 0 1 20 36 cm
+q
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 10.5 0 Td (\177) Tj T* -10.5 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 -3 cm
+q
+BT 1 0 0 1 0 2 Tm 12 TL /F1 10 Tf 0 0 0 rg (directory ) Tj /F4 10 Tf (<) Tj (mccdaqhats) Tj (>) Tj (/dbd/) Tj /F1 10 Tf ( with EPICS description\(s\) of possibile fields) Tj T* ET
+Q
+Q
+q
+Q
+Q
+Q
+q
+1 0 0 1 20 30 cm
+Q
+q
+1 0 0 1 20 18 cm
+q
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 10.5 0 Td (\177) Tj T* -10.5 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 -3 cm
+q
+BT 1 0 0 1 0 2 Tm 12 TL /F1 10 Tf 0 0 0 rg (file ) Tj /F4 10 Tf (<) Tj (mccdaqhats) Tj (>) Tj (/iocBoot/iocmccdaqhats/envPaths) Tj /F1 10 Tf ( : absolute path information) Tj T* ET
+Q
+Q
+q
+Q
+Q
+Q
+q
+1 0 0 1 20 12 cm
+Q
+q
+1 0 0 1 20 0 cm
+q
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 10.5 0 Td (\177) Tj T* -10.5 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (possibly more directories and files, which are not important here.) Tj T* ET
+Q
+Q
+q
+Q
+Q
+Q
+q
+1 0 0 1 20 0 cm
+Q
+q
+Q
+Q
+Q
+q
+1 0 0 1 62.69291 105.0236 cm
+Q
+q
+1 0 0 1 62.69291 87.02362 cm
+q
+BT 1 0 0 1 0 2 Tm 12 TL /F1 10 Tf 0 0 0 rg (Use the command ) Tj /F4 10 Tf (make) Tj ( ) Tj (distclean) Tj /F1 10 Tf ( to remove most of generated files.) Tj T* ET
+Q
+Q
+ 
+endstream
+endobj
+42 0 obj
+<<
+/Length 7820
+>>
+stream
+1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
+q
+1 0 0 1 62.69291 747.0236 cm
+q
+BT 1 0 0 1 0 3 Tm 18 TL /F2 15 Tf 0 0 0 rg (2.3. Using) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 717.0236 cm
+q
+BT 1 0 0 1 0 14 Tm 3.94622 Tw 12 TL /F1 10 Tf 0 0 0 rg (The file ) Tj /F4 10 Tf (<) Tj (mccdaqhats) Tj (>) Tj (/iocBoot/iocmccdaqhats/st.cmd) Tj /F1 10 Tf ( should contain an example, how to) Tj T* 0 Tw (automatically find and use all installed MCC hats.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 699.0236 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (There are two ways to start the IOC:) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 693.0236 cm
+Q
+q
+1 0 0 1 62.69291 513.0236 cm
+q
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+BT 1 0 0 1 0 2 Tm  T* ET
+q
+1 0 0 1 20 174 cm
+Q
+q
+1 0 0 1 20 174 cm
+Q
+q
+1 0 0 1 20 72 cm
+q
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 87 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 5.66 0 Td (1.) Tj T* -5.66 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 87 cm
+q
+BT 1 0 0 1 0 2 Tm 12 TL /F1 10 Tf 0 0 0 rg (Make the file ) Tj /F4 10 Tf (<) Tj (mccdaqhats) Tj (>) Tj (/iocBoot/iocmccdaqhats/st.cmd) Tj /F1 10 Tf ( as executable) Tj T* ET
+Q
+Q
+q
+1 0 0 1 23 69 cm
+q
+BT 1 0 0 1 0 2 Tm 12 TL /F4 10 Tf 0 0 0 rg (chmod) Tj ( ) Tj (+x) Tj ( ) Tj (<) Tj (mccdaqhats) Tj (>) Tj (/iocBoot/iocmccdaqhats/st.cmd) Tj T* ET
+Q
+Q
+q
+1 0 0 1 23 51 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (go into the same directory) Tj T* ET
+Q
+Q
+q
+1 0 0 1 23 33 cm
+q
+BT 1 0 0 1 0 2 Tm 12 TL /F4 10 Tf 0 0 0 rg (cd) Tj ( ) Tj (<) Tj (mccdaqhats) Tj (>) Tj (/iocBoot/iocmccdaqhats/) Tj T* ET
+Q
+Q
+q
+1 0 0 1 23 15 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (and start it with) Tj T* ET
+Q
+Q
+q
+1 0 0 1 23 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F4 10 Tf 12 TL (./st.cmd) Tj T* ET
+Q
+Q
+q
+Q
+Q
+Q
+q
+1 0 0 1 20 66 cm
+Q
+q
+1 0 0 1 20 0 cm
+q
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 51 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 5.66 0 Td (2.) Tj T* -5.66 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 51 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (Go into the same directory) Tj T* ET
+Q
+Q
+q
+1 0 0 1 23 33 cm
+q
+BT 1 0 0 1 0 2 Tm 12 TL /F4 10 Tf 0 0 0 rg (cd) Tj ( ) Tj (<) Tj (mccdaqhats) Tj (>) Tj (/iocBoot/iocmccdaqhats/) Tj T* ET
+Q
+Q
+q
+1 0 0 1 23 15 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (and start the IOC with the command line) Tj T* ET
+Q
+Q
+q
+1 0 0 1 23 -3 cm
+q
+BT 1 0 0 1 0 2 Tm 12 TL /F4 10 Tf 0 0 0 rg (<) Tj (mccdaqhats) Tj (>) Tj (/bin/linux-arm/mccdaqhats) Tj ( ) Tj (st.cmd) Tj T* ET
+Q
+Q
+q
+Q
+Q
+Q
+q
+1 0 0 1 20 0 cm
+Q
+q
+Q
+Q
+Q
+q
+1 0 0 1 62.69291 513.0236 cm
+Q
+q
+1 0 0 1 62.69291 495.0236 cm
+q
+BT 1 0 0 1 0 2 Tm 12 TL /F1 10 Tf 0 0 0 rg (The IOC is started and reads the file ) Tj /F4 10 Tf (st.cmd) Tj /F1 10 Tf ( as input, which triggers these important functions:) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 489.0236 cm
+Q
+q
+1 0 0 1 62.69291 315.0236 cm
+q
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+BT 1 0 0 1 0 2 Tm  T* ET
+q
+1 0 0 1 20 168 cm
+Q
+q
+1 0 0 1 20 168 cm
+Q
+q
+1 0 0 1 20 156 cm
+q
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 5.66 0 Td (1.) Tj T* -5.66 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 -3 cm
+q
+BT 1 0 0 1 0 2 Tm 12 TL /F1 10 Tf 0 0 0 rg (The line with ) Tj /F4 10 Tf (envPaths) Tj /F1 10 Tf ( reads the absolute paths, which are used here.) Tj T* ET
+Q
+Q
+q
+Q
+Q
+Q
+q
+1 0 0 1 20 150 cm
+Q
+q
+1 0 0 1 20 138 cm
+q
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 5.66 0 Td (2.) Tj T* -5.66 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 -3 cm
+q
+BT 1 0 0 1 0 2 Tm 12 TL /F1 10 Tf 0 0 0 rg (The function ) Tj /F4 10 Tf (dbLoadDatabase) Tj /F1 10 Tf ( reads and prepares the database definitions.) Tj T* ET
+Q
+Q
+q
+Q
+Q
+Q
+q
+1 0 0 1 20 132 cm
+Q
+q
+1 0 0 1 20 108 cm
+q
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 9 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 5.66 0 Td (3.) Tj T* -5.66 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 -3 cm
+q
+BT 1 0 0 1 0 14 Tm 1.001395 Tw 12 TL /F1 10 Tf 0 0 0 rg (The function ) Tj /F4 10 Tf (mccdaqhats_registerRecordDeviceDriver) Tj /F1 10 Tf ( initializes the support, that next) Tj T* 0 Tw (commands are useable.) Tj T* ET
+Q
+Q
+q
+Q
+Q
+Q
+q
+1 0 0 1 20 102 cm
+Q
+q
+1 0 0 1 20 78 cm
+q
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 9 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 5.66 0 Td (4.) Tj T* -5.66 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 -3 cm
+q
+BT 1 0 0 1 0 14 Tm 1.020888 Tw 12 TL /F1 10 Tf 0 0 0 rg (The function ) Tj /F4 10 Tf (mccdaqhatsInitialize) Tj /F1 10 Tf ( initializes the required MCC library and searches for /) Tj T* 0 Tw (reads all installed modules and generates an internal parameter list.) Tj T* ET
+Q
+Q
+q
+Q
+Q
+Q
+q
+1 0 0 1 20 72 cm
+Q
+q
+1 0 0 1 20 48 cm
+q
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 9 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 5.66 0 Td (5.) Tj T* -5.66 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 -3 cm
+q
+BT 1 0 0 1 0 14 Tm 2.434147 Tw 12 TL /F1 10 Tf 0 0 0 rg (The function ) Tj /F4 10 Tf (mccdaqhatsWriteDB) Tj /F1 10 Tf ( writes the internal parameter list into a file suitable as) Tj T* 0 Tw (EPICS database.) Tj T* ET
+Q
+Q
+q
+Q
+Q
+Q
+q
+1 0 0 1 20 42 cm
+Q
+q
+1 0 0 1 20 18 cm
+q
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 9 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 5.66 0 Td (6.) Tj T* -5.66 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 -3 cm
+q
+BT 1 0 0 1 0 14 Tm 2.148976 Tw 12 TL /F1 10 Tf 0 0 0 rg (The function ) Tj /F4 10 Tf (dbLoadRecords) Tj /F1 10 Tf ( reads this freshly generated EPICS database and generates) Tj T* 0 Tw (EPICS PVs for them, here the prefix is important for using unique EPICS PV names.) Tj T* ET
+Q
+Q
+q
+Q
+Q
+Q
+q
+1 0 0 1 20 12 cm
+Q
+q
+1 0 0 1 20 0 cm
+q
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 5.66 0 Td (7.) Tj T* -5.66 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 -3 cm
+q
+BT 1 0 0 1 0 2 Tm 12 TL /F1 10 Tf 0 0 0 rg (The function ) Tj /F4 10 Tf (iocInit) Tj /F1 10 Tf ( starts the IOC.) Tj T* ET
+Q
+Q
+q
+Q
+Q
+Q
+q
+1 0 0 1 20 0 cm
+Q
+q
+Q
+Q
+Q
+q
+1 0 0 1 62.69291 315.0236 cm
+Q
+q
+1 0 0 1 62.69291 285.0236 cm
+q
+BT 1 0 0 1 0 14 Tm .590574 Tw 12 TL /F1 10 Tf 0 0 0 rg (No error message should appear and a prompt as last line. A command ) Tj /F4 10 Tf (dbl) Tj /F1 10 Tf ( could show existing EPICS) Tj T* 0 Tw (PVs. See EPICS documentation for more help.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 255.0236 cm
+q
+BT 1 0 0 1 0 3 Tm 18 TL /F2 15 Tf 0 0 0 rg (3. Automatically generated parameters) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 225.0236 cm
+q
+BT 1 0 0 1 0 3 Tm 18 TL /F2 15 Tf 0 0 0 rg (3.1. Naming scheme) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 171.0236 cm
+q
+BT 1 0 0 1 0 38 Tm .01528 Tw 12 TL /F1 10 Tf 0 0 0 rg (The support is using asyn module. Every parameter has its unique name starting with ) Tj /F3 10 Tf (MCC_) Tj /F1 10 Tf ( followed by a) Tj T* 0 Tw .151235 Tw (module address ) Tj /F3 10 Tf (A) Tj (<) Tj (n) Tj (>) Tj (_) Tj /F1 10 Tf ( and a suffix described in the next chapters. The module address depends on your) Tj T* 0 Tw .334198 Tw (hardware setup, the first has the address 0 and is directly attached on the Raspberry Pi. A maximum of 8) Tj T* 0 Tw (hats are supported, so the address could be 0 to 7.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 117.0236 cm
+q
+BT 1 0 0 1 0 38 Tm .046457 Tw 12 TL /F1 10 Tf 0 0 0 rg (An example for a parameter could be ) Tj /F3 10 Tf (MCC_A0_C1) Tj /F1 10 Tf (, which means the 2nd channel of the first module. The) Tj T* 0 Tw .85229 Tw (function ) Tj /F4 10 Tf (mccdaqhatsWriteDB) Tj /F1 10 Tf ( writes a substitution prefix ) Tj /F4 10 Tf ($\(P\):) Tj /F1 10 Tf ( to every parameter, so the EPICS PV) Tj T* 0 Tw 1.988314 Tw (name \(after loading with ) Tj /F4 10 Tf (dbLoadRecords) Tj /F1 10 Tf ( and ) Tj /F4 10 Tf (P=example) Tj /F1 10 Tf ( for the example parameter above\) would) Tj T* 0 Tw (result in) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 111.0236 cm
+Q
+q
+1 0 0 1 62.69291 99.02362 cm
+q
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+BT 1 0 0 1 0 2 Tm  T* ET
+q
+1 0 0 1 20 0 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F4 10 Tf 12 TL (example:MCC_A0_C1) Tj T* ET
+Q
+Q
+q
+Q
+Q
+Q
+q
+1 0 0 1 62.69291 99.02362 cm
+Q
+ 
+endstream
+endobj
+43 0 obj
+<<
+/Length 12150
+>>
+stream
+1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
+q
+1 0 0 1 62.69291 747.0236 cm
+q
+BT 1 0 0 1 0 3 Tm 18 TL /F2 15 Tf 0 0 0 rg (3.2. MCC118 analog input) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 735.0236 cm
+Q
+q
+1 0 0 1 62.69291 561.0236 cm
+q
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+BT 1 0 0 1 0 2 Tm  T* ET
+q
+1 0 0 1 20 168 cm
+Q
+q
+1 0 0 1 20 0 cm
+q
+1 1 1 rg
+n 0 168 449.8898 -18 re f*
+.878431 .878431 .878431 rg
+n 0 150 449.8898 -18 re f*
+1 1 1 rg
+n 0 132 449.8898 -18 re f*
+.878431 .878431 .878431 rg
+n 0 114 449.8898 -18 re f*
+1 1 1 rg
+n 0 96 449.8898 -18 re f*
+.878431 .878431 .878431 rg
+n 0 78 449.8898 -30 re f*
+1 1 1 rg
+n 0 48 449.8898 -30 re f*
+.878431 .878431 .878431 rg
+n 0 18 449.8898 -18 re f*
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 153 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F2 10 Tf 12 TL (name) Tj T* ET
+Q
+Q
+q
+1 0 0 1 137.2178 153 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F2 10 Tf 12 TL (dir) Tj T* ET
+Q
+Q
+q
+1 0 0 1 193.4541 153 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F2 10 Tf 12 TL (type) Tj T* ET
+Q
+Q
+q
+1 0 0 1 262.1872 153 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F2 10 Tf 12 TL (description) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 135 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (C0 ... C7) Tj T* ET
+Q
+Q
+q
+1 0 0 1 137.2178 135 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (R) Tj T* ET
+Q
+Q
+q
+1 0 0 1 193.4541 135 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (float32[]) Tj T* ET
+Q
+Q
+q
+1 0 0 1 262.1872 135 cm
+q
+BT 1 0 0 1 0 2 Tm 12 TL /F1 10 Tf 0 0 0 rg (channel values as ) Tj /F3 10 Tf (aai) Tj /F1 10 Tf ( array) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 117 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (SLOPE0 ... SLOPE7) Tj T* ET
+Q
+Q
+q
+1 0 0 1 137.2178 117 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (R) Tj T* ET
+Q
+Q
+q
+1 0 0 1 193.4541 117 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (float32) Tj T* ET
+Q
+Q
+q
+1 0 0 1 262.1872 117 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (used EEPROM correction factor) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 99 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (OFFSET0 ... OFFSET7) Tj T* ET
+Q
+Q
+q
+1 0 0 1 137.2178 99 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (R) Tj T* ET
+Q
+Q
+q
+1 0 0 1 193.4541 99 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (float32) Tj T* ET
+Q
+Q
+q
+1 0 0 1 262.1872 99 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (used EEPROM correction offset) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 81 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (START) Tj T* ET
+Q
+Q
+q
+1 0 0 1 137.2178 81 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (RW) Tj T* ET
+Q
+Q
+q
+1 0 0 1 193.4541 81 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (enum) Tj T* ET
+Q
+Q
+q
+1 0 0 1 262.1872 81 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (acquisition state: 0=stop, 1=start) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 63 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (MASK) Tj T* ET
+Q
+Q
+q
+1 0 0 1 137.2178 63 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (RW) Tj T* ET
+Q
+Q
+q
+1 0 0 1 193.4541 63 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (uint8) Tj T* ET
+Q
+Q
+q
+1 0 0 1 262.1872 51 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 14 Tm /F1 10 Tf 12 TL (channel selection bit mask: bit0=C0 ..) Tj T* (bit7=C7) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 33 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (TRIG) Tj T* ET
+Q
+Q
+q
+1 0 0 1 137.2178 33 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (RW) Tj T* ET
+Q
+Q
+q
+1 0 0 1 193.4541 33 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (enum) Tj T* ET
+Q
+Q
+q
+1 0 0 1 262.1872 21 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 14 Tm /F1 10 Tf 12 TL -0.084366 Tw (trigger mode: 0=none, 1=rising, 2=falling,) Tj T* 0 Tw (3=high, 4=low) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (RATE) Tj T* ET
+Q
+Q
+q
+1 0 0 1 137.2178 3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (RW) Tj T* ET
+Q
+Q
+q
+1 0 0 1 193.4541 3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (float) Tj T* ET
+Q
+Q
+q
+1 0 0 1 262.1872 3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (ADC clock rate selection) Tj T* ET
+Q
+Q
+q
+1 J
+1 j
+0 0 0 RG
+.25 w
+n 0 150 m 449.8898 150 l S
+n 0 132 m 449.8898 132 l S
+n 0 114 m 449.8898 114 l S
+n 0 96 m 449.8898 96 l S
+n 0 78 m 449.8898 78 l S
+n 0 48 m 449.8898 48 l S
+n 0 18 m 449.8898 18 l S
+n 131.2178 0 m 131.2178 168 l S
+n 187.4541 0 m 187.4541 168 l S
+n 256.1872 0 m 256.1872 168 l S
+n 0 168 m 449.8898 168 l S
+n 0 0 m 449.8898 0 l S
+n 0 0 m 0 168 l S
+n 449.8898 0 m 449.8898 168 l S
+Q
+Q
+Q
+q
+1 0 0 1 20 0 cm
+Q
+q
+Q
+Q
+Q
+q
+1 0 0 1 62.69291 561.0236 cm
+Q
+q
+1 0 0 1 62.69291 495.0236 cm
+q
+BT 1 0 0 1 0 50 Tm .56683 Tw 12 TL /F1 10 Tf 0 0 0 rg (In stopped state, you have to set up first ) Tj /F3 10 Tf (MASK) Tj /F1 10 Tf (, ) Tj /F3 10 Tf (TRIG) Tj /F1 10 Tf ( and ) Tj /F3 10 Tf (RATE) Tj /F1 10 Tf (. Set bits in ) Tj /F3 10 Tf (MASK) Tj /F1 10 Tf ( enable the specified) Tj T* 0 Tw .052651 Tw (channel, cleared bits disable the specified channel. The ) Tj /F3 10 Tf (TRIG) Tj /F1 10 Tf ( trigger mode tells the hardware to optionally) Tj T* 0 Tw 1.43332 Tw (wait for the specified signal on the ) Tj /F3 10 Tf (TRG) Tj /F1 10 Tf ( input. The ) Tj /F3 10 Tf (RATE) Tj /F1 10 Tf ( as positive value selects to use the internal) Tj T* 0 Tw .56683 Tw (clock, 0 or negative value means an external clock on ) Tj /F3 10 Tf (CLK) Tj /F1 10 Tf ( input and a negative value gives a hint, what) Tj T* 0 Tw (clock frequency could be expected.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 453.0236 cm
+q
+BT 1 0 0 1 0 26 Tm .877765 Tw 12 TL /F1 10 Tf 0 0 0 rg (Setting ) Tj /F3 10 Tf (START) Tj /F1 10 Tf ( to 1/) Tj /F3 10 Tf (start) Tj /F1 10 Tf ( starts the data acquisition until ) Tj /F3 10 Tf (START) Tj /F1 10 Tf ( is set to 0/) Tj /F3 10 Tf (stop) Tj /F1 10 Tf (. The support will set an) Tj T* 0 Tw .701751 Tw (alarm, if some settings is wrong, e.g. a wrong sample rate \(max. 100kHz on one channel, max. 12.5kHz) Tj T* 0 Tw (with 8 channels\).) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 435.0236 cm
+q
+BT 1 0 0 1 0 2 Tm 12 TL /F1 10 Tf 0 0 0 rg (While in acquisition mode, only ) Tj /F3 10 Tf (START) Tj /F1 10 Tf ( could be set to 0/) Tj /F3 10 Tf (stop) Tj /F1 10 Tf ( to stop the data acquisition.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 405.0236 cm
+q
+BT 1 0 0 1 0 3 Tm 18 TL /F2 15 Tf 0 0 0 rg (3.3. MCC128 analog input) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 393.0236 cm
+Q
+q
+1 0 0 1 62.69291 135.0236 cm
+q
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+BT 1 0 0 1 0 2 Tm  T* ET
+q
+1 0 0 1 20 252 cm
+Q
+q
+1 0 0 1 20 0 cm
+q
+1 1 1 rg
+n 0 252 449.8898 -18 re f*
+.878431 .878431 .878431 rg
+n 0 234 449.8898 -18 re f*
+1 1 1 rg
+n 0 216 449.8898 -30 re f*
+.878431 .878431 .878431 rg
+n 0 186 449.8898 -30 re f*
+1 1 1 rg
+n 0 156 449.8898 -18 re f*
+.878431 .878431 .878431 rg
+n 0 138 449.8898 -30 re f*
+1 1 1 rg
+n 0 108 449.8898 -30 re f*
+.878431 .878431 .878431 rg
+n 0 78 449.8898 -30 re f*
+1 1 1 rg
+n 0 48 449.8898 -30 re f*
+.878431 .878431 .878431 rg
+n 0 18 449.8898 -18 re f*
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 237 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F2 10 Tf 12 TL (name) Tj T* ET
+Q
+Q
+q
+1 0 0 1 130.9694 237 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F2 10 Tf 12 TL (dir) Tj T* ET
+Q
+Q
+q
+1 0 0 1 187.2056 237 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F2 10 Tf 12 TL (type) Tj T* ET
+Q
+Q
+q
+1 0 0 1 255.9388 237 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F2 10 Tf 12 TL (description) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 219 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (C0 ... C7) Tj T* ET
+Q
+Q
+q
+1 0 0 1 130.9694 219 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (R) Tj T* ET
+Q
+Q
+q
+1 0 0 1 187.2056 219 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (float32[]) Tj T* ET
+Q
+Q
+q
+1 0 0 1 255.9388 219 cm
+q
+BT 1 0 0 1 0 2 Tm 12 TL /F1 10 Tf 0 0 0 rg (channel values as ) Tj /F3 10 Tf (aai) Tj /F1 10 Tf ( array) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 201 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (SLOPE0 ... SLOPE3) Tj T* ET
+Q
+Q
+q
+1 0 0 1 130.9694 201 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (R) Tj T* ET
+Q
+Q
+q
+1 0 0 1 187.2056 201 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (float32) Tj T* ET
+Q
+Q
+q
+1 0 0 1 255.9388 189 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 14 Tm /F1 10 Tf 12 TL (used EEPROM correction factor for every) Tj T* (analog input range) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 171 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (OFFSET0...OFFSET3) Tj T* ET
+Q
+Q
+q
+1 0 0 1 130.9694 171 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (R) Tj T* ET
+Q
+Q
+q
+1 0 0 1 187.2056 171 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (float32) Tj T* ET
+Q
+Q
+q
+1 0 0 1 255.9388 159 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 14 Tm /F1 10 Tf 12 TL (used EEPROM correction offset for every) Tj T* (analog input range) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 141 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (START) Tj T* ET
+Q
+Q
+q
+1 0 0 1 130.9694 141 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (RW) Tj T* ET
+Q
+Q
+q
+1 0 0 1 187.2056 141 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (enum) Tj T* ET
+Q
+Q
+q
+1 0 0 1 255.9388 141 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (acquisition state: 0=stop, 1=start) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 123 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (MASK) Tj T* ET
+Q
+Q
+q
+1 0 0 1 130.9694 123 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (RW) Tj T* ET
+Q
+Q
+q
+1 0 0 1 187.2056 123 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (uint8) Tj T* ET
+Q
+Q
+q
+1 0 0 1 255.9388 111 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 14 Tm /F1 10 Tf 12 TL (channel selection bit mask: bit0=C0 ...) Tj T* (bit3=C3/bit7=C7) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 93 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (TRIG) Tj T* ET
+Q
+Q
+q
+1 0 0 1 130.9694 93 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (RW) Tj T* ET
+Q
+Q
+q
+1 0 0 1 187.2056 93 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (enum) Tj T* ET
+Q
+Q
+q
+1 0 0 1 255.9388 81 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 14 Tm /F1 10 Tf 12 TL (trigger mode: 0=none, 1=rising, 2=falling,) Tj T* (3=high, 4=low) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 63 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (MODE) Tj T* ET
+Q
+Q
+q
+1 0 0 1 130.9694 63 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (RW) Tj T* ET
+Q
+Q
+q
+1 0 0 1 187.2056 63 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (enum) Tj T* ET
+Q
+Q
+q
+1 0 0 1 255.9388 51 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 14 Tm /F1 10 Tf 12 TL (analog input mode: 0=single-ended,) Tj T* (1=differencial) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 33 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (RANGE) Tj T* ET
+Q
+Q
+q
+1 0 0 1 130.9694 33 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (RW) Tj T* ET
+Q
+Q
+q
+1 0 0 1 187.2056 33 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (enum) Tj T* ET
+Q
+Q
+q
+1 0 0 1 255.9388 21 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 14 Tm /F1 10 Tf 12 TL (analog input range selection: 0=10V,) Tj T* (1=5V, 2=2V, 3=1V) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (RATE) Tj T* ET
+Q
+Q
+q
+1 0 0 1 130.9694 3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (RW) Tj T* ET
+Q
+Q
+q
+1 0 0 1 187.2056 3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (float) Tj T* ET
+Q
+Q
+q
+1 0 0 1 255.9388 3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (ADC clock rate selection) Tj T* ET
+Q
+Q
+q
+1 J
+1 j
+0 0 0 RG
+.25 w
+n 0 234 m 449.8898 234 l S
+n 0 216 m 449.8898 216 l S
+n 0 186 m 449.8898 186 l S
+n 0 156 m 449.8898 156 l S
+n 0 138 m 449.8898 138 l S
+n 0 108 m 449.8898 108 l S
+n 0 78 m 449.8898 78 l S
+n 0 48 m 449.8898 48 l S
+n 0 18 m 449.8898 18 l S
+n 124.9694 0 m 124.9694 252 l S
+n 181.2056 0 m 181.2056 252 l S
+n 249.9388 0 m 249.9388 252 l S
+n 0 252 m 449.8898 252 l S
+n 0 0 m 449.8898 0 l S
+n 0 0 m 0 252 l S
+n 449.8898 0 m 449.8898 252 l S
+Q
+Q
+Q
+q
+1 0 0 1 20 0 cm
+Q
+q
+Q
+Q
+Q
+q
+1 0 0 1 62.69291 135.0236 cm
+Q
+q
+1 0 0 1 62.69291 81.02362 cm
+q
+BT 1 0 0 1 0 38 Tm .767045 Tw 12 TL /F1 10 Tf 0 0 0 rg (In stopped state, you have to set up first ) Tj /F3 10 Tf (MODE) Tj /F1 10 Tf (, ) Tj /F3 10 Tf (RANGE) Tj /F1 10 Tf (, ) Tj /F3 10 Tf (MASK) Tj /F1 10 Tf (, ) Tj /F3 10 Tf (TRIG) Tj /F1 10 Tf ( and ) Tj /F3 10 Tf (RATE) Tj /F1 10 Tf (. ) Tj /F3 10 Tf (MODE) Tj /F1 10 Tf ( selects, how) Tj T* 0 Tw -0.09064 Tw (many channels are available: in single-ended mode, all 8 channels could be used. In differential mode, two) Tj T* 0 Tw .40528 Tw (inputs are a pair of differential inputs, so 4 channels are available. ) Tj /F3 10 Tf (RANGE) Tj /F1 10 Tf ( sets the allowed input voltage) Tj T* 0 Tw .200651 Tw (range \(lower voltages have higher resolution\). Set bits in ) Tj /F3 10 Tf (MASK) Tj /F1 10 Tf ( enable the specified channel, cleared bits) Tj T* 0 Tw ET
+Q
+Q
+ 
+endstream
+endobj
+44 0 obj
+<<
+/Length 11360
+>>
+stream
+1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
+q
+1 0 0 1 62.69291 717.0236 cm
+q
+BT 1 0 0 1 0 38 Tm .08436 Tw 12 TL /F1 10 Tf 0 0 0 rg (disable the specified channel. The ) Tj /F3 10 Tf (TRIG) Tj /F1 10 Tf ( trigger mode tells the hardware to optionally wait for the specified) Tj T* 0 Tw .21683 Tw (signal on the ) Tj /F3 10 Tf (TRG) Tj /F1 10 Tf ( input. The ) Tj /F3 10 Tf (RATE) Tj /F1 10 Tf ( as positive value selects to use the internal clock, 0 or negative value) Tj T* 0 Tw .752765 Tw (means an external clock on ) Tj /F3 10 Tf (CLK) Tj /F1 10 Tf ( input and a negative value gives a hint, what clock frequency could be) Tj T* 0 Tw (expected.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 675.0236 cm
+q
+BT 1 0 0 1 0 26 Tm .877765 Tw 12 TL /F1 10 Tf 0 0 0 rg (Setting ) Tj /F3 10 Tf (START) Tj /F1 10 Tf ( to 1/) Tj /F3 10 Tf (start) Tj /F1 10 Tf ( starts the data acquisition until ) Tj /F3 10 Tf (START) Tj /F1 10 Tf ( is set to 0/) Tj /F3 10 Tf (stop) Tj /F1 10 Tf (. The support will set an) Tj T* 0 Tw .701751 Tw (alarm, if some settings is wrong, e.g. a wrong sample rate \(max. 100kHz on one channel, max. 12.5kHz) Tj T* 0 Tw (with 8 channels\).) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 657.0236 cm
+q
+BT 1 0 0 1 0 2 Tm 12 TL /F1 10 Tf 0 0 0 rg (While in acquisition mode, only ) Tj /F3 10 Tf (START) Tj /F1 10 Tf ( could be set to 0/) Tj /F3 10 Tf (stop) Tj /F1 10 Tf ( to stop the data acquisition.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 627.0236 cm
+q
+BT 1 0 0 1 0 3 Tm 18 TL /F2 15 Tf 0 0 0 rg (3.4. MCC134 thermocouple input) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 615.0236 cm
+Q
+q
+1 0 0 1 62.69291 471.0236 cm
+q
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+BT 1 0 0 1 0 2 Tm  T* ET
+q
+1 0 0 1 20 138 cm
+Q
+q
+1 0 0 1 20 0 cm
+q
+1 1 1 rg
+n 0 138 449.8898 -18 re f*
+.878431 .878431 .878431 rg
+n 0 120 449.8898 -18 re f*
+1 1 1 rg
+n 0 102 449.8898 -18 re f*
+.878431 .878431 .878431 rg
+n 0 84 449.8898 -30 re f*
+1 1 1 rg
+n 0 54 449.8898 -18 re f*
+.878431 .878431 .878431 rg
+n 0 36 449.8898 -18 re f*
+1 1 1 rg
+n 0 18 449.8898 -18 re f*
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 123 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F2 10 Tf 12 TL (name) Tj T* ET
+Q
+Q
+q
+1 0 0 1 124.7209 123 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F2 10 Tf 12 TL (dir) Tj T* ET
+Q
+Q
+q
+1 0 0 1 180.9571 123 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F2 10 Tf 12 TL (type) Tj T* ET
+Q
+Q
+q
+1 0 0 1 243.4418 123 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F2 10 Tf 12 TL (description) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 105 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (C0 ... C3) Tj T* ET
+Q
+Q
+q
+1 0 0 1 124.7209 105 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (R) Tj T* ET
+Q
+Q
+q
+1 0 0 1 180.9571 105 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (float32) Tj T* ET
+Q
+Q
+q
+1 0 0 1 243.4418 105 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (channel value) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 87 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (CJC0 ... CJC3) Tj T* ET
+Q
+Q
+q
+1 0 0 1 124.7209 87 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (R) Tj T* ET
+Q
+Q
+q
+1 0 0 1 180.9571 87 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (float32) Tj T* ET
+Q
+Q
+q
+1 0 0 1 243.4418 87 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (cold junction compensation value) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 69 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (TCTYPE0...TCTYPE3) Tj T* ET
+Q
+Q
+q
+1 0 0 1 124.7209 69 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (RW) Tj T* ET
+Q
+Q
+q
+1 0 0 1 180.9571 69 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (enum) Tj T* ET
+Q
+Q
+q
+1 0 0 1 243.4418 57 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 14 Tm /F1 10 Tf 12 TL (thermocouple type: 0=disabled, 1=J, 2=K,) Tj T* (3=T, 4=E, 5=R, 6=S, 7=B, 8=N) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 39 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (SLOPE) Tj T* ET
+Q
+Q
+q
+1 0 0 1 124.7209 39 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (R) Tj T* ET
+Q
+Q
+q
+1 0 0 1 180.9571 39 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (float32) Tj T* ET
+Q
+Q
+q
+1 0 0 1 243.4418 39 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (used EEPROM correction factor) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 21 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (OFFSET) Tj T* ET
+Q
+Q
+q
+1 0 0 1 124.7209 21 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (R) Tj T* ET
+Q
+Q
+q
+1 0 0 1 180.9571 21 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (float32) Tj T* ET
+Q
+Q
+q
+1 0 0 1 243.4418 21 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (used EEPROM correction offset) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (RATE) Tj T* ET
+Q
+Q
+q
+1 0 0 1 124.7209 3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (RW) Tj T* ET
+Q
+Q
+q
+1 0 0 1 180.9571 3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (uint8) Tj T* ET
+Q
+Q
+q
+1 0 0 1 243.4418 3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (update interval in seconds) Tj T* ET
+Q
+Q
+q
+1 J
+1 j
+0 0 0 RG
+.25 w
+n 0 120 m 449.8898 120 l S
+n 0 102 m 449.8898 102 l S
+n 0 84 m 449.8898 84 l S
+n 0 54 m 449.8898 54 l S
+n 0 36 m 449.8898 36 l S
+n 0 18 m 449.8898 18 l S
+n 118.7209 0 m 118.7209 138 l S
+n 174.9571 0 m 174.9571 138 l S
+n 237.4418 0 m 237.4418 138 l S
+n 0 138 m 449.8898 138 l S
+n 0 0 m 449.8898 0 l S
+n 0 0 m 0 138 l S
+n 449.8898 0 m 449.8898 138 l S
+Q
+Q
+Q
+q
+1 0 0 1 20 0 cm
+Q
+q
+Q
+Q
+Q
+q
+1 0 0 1 62.69291 471.0236 cm
+Q
+q
+1 0 0 1 62.69291 441.0236 cm
+q
+BT 1 0 0 1 0 14 Tm .994692 Tw 12 TL /F1 10 Tf 0 0 0 rg (The thermocouple will update every input with the specified ) Tj /F3 10 Tf (RATE) Tj /F1 10 Tf (, if the ) Tj /F3 10 Tf (TCTYPE) Tj /F1 10 Tf ( of the channel is not) Tj T* 0 Tw (0/) Tj /F3 10 Tf (disabled) Tj /F1 10 Tf (.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 411.0236 cm
+q
+BT 1 0 0 1 0 3 Tm 18 TL /F2 15 Tf 0 0 0 rg (3.5. MCC152 analog output, digital I/O) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 399.0236 cm
+Q
+q
+1 0 0 1 62.69291 165.0236 cm
+q
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+BT 1 0 0 1 0 2 Tm  T* ET
+q
+1 0 0 1 20 228 cm
+Q
+q
+1 0 0 1 20 0 cm
+q
+1 1 1 rg
+n 0 228 449.8898 -18 re f*
+.878431 .878431 .878431 rg
+n 0 210 449.8898 -18 re f*
+1 1 1 rg
+n 0 192 449.8898 -18 re f*
+.878431 .878431 .878431 rg
+n 0 174 449.8898 -30 re f*
+1 1 1 rg
+n 0 144 449.8898 -30 re f*
+.878431 .878431 .878431 rg
+n 0 114 449.8898 -18 re f*
+1 1 1 rg
+n 0 96 449.8898 -30 re f*
+.878431 .878431 .878431 rg
+n 0 66 449.8898 -18 re f*
+1 1 1 rg
+n 0 48 449.8898 -18 re f*
+.878431 .878431 .878431 rg
+n 0 30 449.8898 -30 re f*
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 213 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F2 10 Tf 12 TL (name) Tj T* ET
+Q
+Q
+q
+1 0 0 1 130.9694 213 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F2 10 Tf 12 TL (dir) Tj T* ET
+Q
+Q
+q
+1 0 0 1 187.2056 213 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F2 10 Tf 12 TL (type) Tj T* ET
+Q
+Q
+q
+1 0 0 1 249.6903 213 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F2 10 Tf 12 TL (description) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 195 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (C0 ... C1) Tj T* ET
+Q
+Q
+q
+1 0 0 1 130.9694 195 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (R) Tj T* ET
+Q
+Q
+q
+1 0 0 1 187.2056 195 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (float32) Tj T* ET
+Q
+Q
+q
+1 0 0 1 249.6903 195 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (analog output channel values) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 177 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (DI) Tj T* ET
+Q
+Q
+q
+1 0 0 1 130.9694 177 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (R) Tj T* ET
+Q
+Q
+q
+1 0 0 1 187.2056 177 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (uint8) Tj T* ET
+Q
+Q
+q
+1 0 0 1 249.6903 177 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (digital input state bit mask) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 159 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (DO) Tj T* ET
+Q
+Q
+q
+1 0 0 1 130.9694 159 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (RW) Tj T* ET
+Q
+Q
+q
+1 0 0 1 187.2056 159 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (uint8) Tj T* ET
+Q
+Q
+q
+1 0 0 1 249.6903 147 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 14 Tm /F1 10 Tf 12 TL (digital output state bit mask, bits configured) Tj T* (as input will be ignored) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 129 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (DIR) Tj T* ET
+Q
+Q
+q
+1 0 0 1 130.9694 129 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (RW) Tj T* ET
+Q
+Q
+q
+1 0 0 1 187.2056 129 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (uint8) Tj T* ET
+Q
+Q
+q
+1 0 0 1 249.6903 117 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 14 Tm /F1 10 Tf 12 TL (digital I/O direction bit mask: cleared bit) Tj T* (means output, set bit means input) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 99 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (IN_PULL_EN) Tj T* ET
+Q
+Q
+q
+1 0 0 1 130.9694 99 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (RW) Tj T* ET
+Q
+Q
+q
+1 0 0 1 187.2056 99 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (uint8) Tj T* ET
+Q
+Q
+q
+1 0 0 1 249.6903 99 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (digital input pull resistor enable bit mask) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 81 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (IN_PULL_CFG) Tj T* ET
+Q
+Q
+q
+1 0 0 1 130.9694 81 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (RW) Tj T* ET
+Q
+Q
+q
+1 0 0 1 187.2056 81 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (uint8) Tj T* ET
+Q
+Q
+q
+1 0 0 1 249.6903 69 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 14 Tm /F1 10 Tf 12 TL (digital input pull direction bit mask:) Tj T* (0=pull-down, 1=pull-up) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 51 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (IN_INV) Tj T* ET
+Q
+Q
+q
+1 0 0 1 130.9694 51 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (RW) Tj T* ET
+Q
+Q
+q
+1 0 0 1 187.2056 51 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (uint8) Tj T* ET
+Q
+Q
+q
+1 0 0 1 249.6903 51 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (digital input inversion bit mask) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 33 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (IN_LATCH) Tj T* ET
+Q
+Q
+q
+1 0 0 1 130.9694 33 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (RW) Tj T* ET
+Q
+Q
+q
+1 0 0 1 187.2056 33 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (uint8) Tj T* ET
+Q
+Q
+q
+1 0 0 1 249.6903 33 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (digital input latch enable bit mask) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 15 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (OUT_TYPE) Tj T* ET
+Q
+Q
+q
+1 0 0 1 130.9694 15 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (RW) Tj T* ET
+Q
+Q
+q
+1 0 0 1 187.2056 15 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (uint8) Tj T* ET
+Q
+Q
+q
+1 0 0 1 249.6903 3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 14 Tm /F1 10 Tf 12 TL (digital output configuration bit mask:) Tj T* (0=push/pull, 1=open-drain) Tj T* ET
+Q
+Q
+q
+1 J
+1 j
+0 0 0 RG
+.25 w
+n 0 210 m 449.8898 210 l S
+n 0 192 m 449.8898 192 l S
+n 0 174 m 449.8898 174 l S
+n 0 144 m 449.8898 144 l S
+n 0 114 m 449.8898 114 l S
+n 0 96 m 449.8898 96 l S
+n 0 66 m 449.8898 66 l S
+n 0 48 m 449.8898 48 l S
+n 0 30 m 449.8898 30 l S
+n 124.9694 0 m 124.9694 228 l S
+n 181.2056 0 m 181.2056 228 l S
+n 243.6903 0 m 243.6903 228 l S
+n 0 228 m 449.8898 228 l S
+n 0 0 m 449.8898 0 l S
+n 0 0 m 0 228 l S
+n 449.8898 0 m 449.8898 228 l S
+Q
+Q
+Q
+q
+1 0 0 1 20 0 cm
+Q
+q
+Q
+Q
+Q
+q
+1 0 0 1 62.69291 165.0236 cm
+Q
+q
+1 0 0 1 62.69291 135.0236 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 14 Tm /F1 10 Tf 12 TL .472339 Tw (Any write to analog or digital outputs will be directly written to hardware. The digital inputs are configured) Tj T* 0 Tw (as interrupt, so any change should be detected in short time and distributed to PVs.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 105.0236 cm
+q
+BT 1 0 0 1 0 3 Tm 18 TL /F2 15 Tf 0 0 0 rg (3.6. MCC172 analog input) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 93.02362 cm
+Q
+q
+1 0 0 1 287.6378 81.02362 cm
+q
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+BT 1 0 0 1 0 2 Tm  T* ET
+q
+1 0 0 1 20 0 cm
+Q
+q
+Q
+Q
+Q
+ 
+endstream
+endobj
+45 0 obj
+<<
+/Length 7041
+>>
+stream
+1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
+q
+1 0 0 1 62.69291 561.0236 cm
+q
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+BT 1 0 0 1 0 2 Tm  T* ET
+q
+1 0 0 1 20 0 cm
+q
+1 1 1 rg
+n 0 204 449.8898 -18 re f*
+.878431 .878431 .878431 rg
+n 0 186 449.8898 -18 re f*
+1 1 1 rg
+n 0 168 449.8898 -18 re f*
+.878431 .878431 .878431 rg
+n 0 150 449.8898 -18 re f*
+1 1 1 rg
+n 0 132 449.8898 -18 re f*
+.878431 .878431 .878431 rg
+n 0 114 449.8898 -18 re f*
+1 1 1 rg
+n 0 96 449.8898 -30 re f*
+.878431 .878431 .878431 rg
+n 0 66 449.8898 -30 re f*
+1 1 1 rg
+n 0 36 449.8898 -18 re f*
+.878431 .878431 .878431 rg
+n 0 18 449.8898 -18 re f*
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 189 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F2 10 Tf 12 TL (name) Tj T* ET
+Q
+Q
+q
+1 0 0 1 130.9694 189 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F2 10 Tf 12 TL (dir) Tj T* ET
+Q
+Q
+q
+1 0 0 1 187.2056 189 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F2 10 Tf 12 TL (type) Tj T* ET
+Q
+Q
+q
+1 0 0 1 255.9388 189 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F2 10 Tf 12 TL (description) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 171 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (C0 ... C1) Tj T* ET
+Q
+Q
+q
+1 0 0 1 130.9694 171 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (R) Tj T* ET
+Q
+Q
+q
+1 0 0 1 187.2056 171 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (float32[]) Tj T* ET
+Q
+Q
+q
+1 0 0 1 255.9388 171 cm
+q
+BT 1 0 0 1 0 2 Tm 12 TL /F1 10 Tf 0 0 0 rg (channel values as ) Tj /F3 10 Tf (aai) Tj /F1 10 Tf ( array) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 153 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (SLOPE0 ... SLOPE1) Tj T* ET
+Q
+Q
+q
+1 0 0 1 130.9694 153 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (R) Tj T* ET
+Q
+Q
+q
+1 0 0 1 187.2056 153 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (float32) Tj T* ET
+Q
+Q
+q
+1 0 0 1 255.9388 153 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (used EEPROM correction factor) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 135 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (OFFSET0...OFFSET1) Tj T* ET
+Q
+Q
+q
+1 0 0 1 130.9694 135 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (R) Tj T* ET
+Q
+Q
+q
+1 0 0 1 187.2056 135 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (float32) Tj T* ET
+Q
+Q
+q
+1 0 0 1 255.9388 135 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (used EEPROM correction offset) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 117 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (IEPE0 ... IEPE1) Tj T* ET
+Q
+Q
+q
+1 0 0 1 130.9694 117 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (RW) Tj T* ET
+Q
+Q
+q
+1 0 0 1 187.2056 117 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (enum) Tj T* ET
+Q
+Q
+q
+1 0 0 1 255.9388 117 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (IEPE sensor power: 0=off, 1=on) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 99 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (START) Tj T* ET
+Q
+Q
+q
+1 0 0 1 130.9694 99 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (RW) Tj T* ET
+Q
+Q
+q
+1 0 0 1 187.2056 99 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (enum) Tj T* ET
+Q
+Q
+q
+1 0 0 1 255.9388 99 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (acquisition state: 0=stop, 1=start) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 81 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (MASK) Tj T* ET
+Q
+Q
+q
+1 0 0 1 130.9694 81 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (RW) Tj T* ET
+Q
+Q
+q
+1 0 0 1 187.2056 81 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (uint8) Tj T* ET
+Q
+Q
+q
+1 0 0 1 255.9388 69 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 14 Tm /F1 10 Tf 12 TL (channel selection bit mask: bit0=C0,) Tj T* (bit1=C1) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 51 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (TRIG) Tj T* ET
+Q
+Q
+q
+1 0 0 1 130.9694 51 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (RW) Tj T* ET
+Q
+Q
+q
+1 0 0 1 187.2056 51 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (enum) Tj T* ET
+Q
+Q
+q
+1 0 0 1 255.9388 39 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 14 Tm /F1 10 Tf 12 TL (trigger mode: 0=none, 1=rising, 2=falling,) Tj T* (3=high, 4=low) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 21 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (CLKSRC) Tj T* ET
+Q
+Q
+q
+1 0 0 1 130.9694 21 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (RW) Tj T* ET
+Q
+Q
+q
+1 0 0 1 187.2056 21 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (enum) Tj T* ET
+Q
+Q
+q
+1 0 0 1 255.9388 21 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (clock source: 0=local, 1=master, 1=slave) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (RATE) Tj T* ET
+Q
+Q
+q
+1 0 0 1 130.9694 3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (RW) Tj T* ET
+Q
+Q
+q
+1 0 0 1 187.2056 3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (float) Tj T* ET
+Q
+Q
+q
+1 0 0 1 255.9388 3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (ADC clock rate selection) Tj T* ET
+Q
+Q
+q
+1 J
+1 j
+0 0 0 RG
+.25 w
+n 0 186 m 449.8898 186 l S
+n 0 168 m 449.8898 168 l S
+n 0 150 m 449.8898 150 l S
+n 0 132 m 449.8898 132 l S
+n 0 114 m 449.8898 114 l S
+n 0 96 m 449.8898 96 l S
+n 0 66 m 449.8898 66 l S
+n 0 36 m 449.8898 36 l S
+n 0 18 m 449.8898 18 l S
+n 124.9694 0 m 124.9694 204 l S
+n 181.2056 0 m 181.2056 204 l S
+n 249.9388 0 m 249.9388 204 l S
+n 0 204 m 449.8898 204 l S
+n 0 0 m 449.8898 0 l S
+n 0 0 m 0 204 l S
+n 449.8898 0 m 449.8898 204 l S
+Q
+Q
+Q
+q
+1 0 0 1 20 0 cm
+Q
+q
+Q
+Q
+Q
+q
+1 0 0 1 62.69291 561.0236 cm
+Q
+q
+1 0 0 1 62.69291 483.0236 cm
+q
+BT 1 0 0 1 0 62 Tm 1.811163 Tw 12 TL /F1 10 Tf 0 0 0 rg (In stopped state, you have to set up first ) Tj /F3 10 Tf (IEPE) Tj /F1 10 Tf (, ) Tj /F3 10 Tf (MASK) Tj /F1 10 Tf (, ) Tj /F3 10 Tf (TRIG) Tj /F1 10 Tf (, ) Tj /F3 10 Tf (CLKSRC) Tj /F1 10 Tf ( and ) Tj /F3 10 Tf (RATE) Tj /F1 10 Tf (. ) Tj /F3 10 Tf (IEPE) Tj /F1 10 Tf ( enables or) Tj T* 0 Tw -0.05564 Tw (disables sensor power on this channel. Set bits in ) Tj /F3 10 Tf (MASK) Tj /F1 10 Tf ( enable the specified channel, cleared bits disable) Tj T* 0 Tw .43186 Tw (the specified channel. The ) Tj /F3 10 Tf (TRIG) Tj /F1 10 Tf ( trigger mode tells the hardware to optionally wait for the specified signal) Tj T* 0 Tw .970542 Tw (on the ) Tj /F3 10 Tf (TRG) Tj /F1 10 Tf ( input. The ) Tj /F3 10 Tf (CLKSRC) Tj /F1 10 Tf ( selects and configures the ) Tj /F3 10 Tf (CLK) Tj /F1 10 Tf ( pin : the ) Tj /F3 10 Tf (local) Tj /F1 10 Tf ( mode ignores it, ) Tj /F3 10 Tf (master) Tj /F1 10 Tf  T* 0 Tw -0.105276 Tw (configures it as output for other modules, which have to be configured as ) Tj /F3 10 Tf (slave) Tj /F1 10 Tf (. The ) Tj /F3 10 Tf (RATE) Tj /F1 10 Tf ( is used on local) Tj T* 0 Tw (and master mode and selects the acquisition frequency.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 453.0236 cm
+q
+BT 1 0 0 1 0 14 Tm .877765 Tw 12 TL /F1 10 Tf 0 0 0 rg (Setting ) Tj /F3 10 Tf (START) Tj /F1 10 Tf ( to 1/) Tj /F3 10 Tf (start) Tj /F1 10 Tf ( starts the data acquisition until ) Tj /F3 10 Tf (START) Tj /F1 10 Tf ( is set to 0/) Tj /F3 10 Tf (stop) Tj /F1 10 Tf (. The support will set an) Tj T* 0 Tw (alarm, if some settings is wrong.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 423.0236 cm
+q
+BT 1 0 0 1 0 14 Tm 1.000542 Tw 12 TL /F1 10 Tf 0 0 0 rg (While in acquisition mode, only ) Tj /F3 10 Tf (START) Tj /F1 10 Tf ( could be set to 0/) Tj /F3 10 Tf (stop) Tj /F1 10 Tf ( to stop the data acquisition. ) Tj /F3 10 Tf (IEPE) Tj /F1 10 Tf ( is also) Tj T* 0 Tw (writeable.) Tj T* ET
+Q
+Q
+ 
+endstream
+endobj
+46 0 obj
+<<
+/Nums [ 0 47 0 R 1 48 0 R 2 49 0 R 3 50 0 R 4 51 0 R 
+  5 52 0 R ]
+>>
+endobj
+47 0 obj
+<<
+/S /D /St 1
+>>
+endobj
+48 0 obj
+<<
+/S /D /St 2
+>>
+endobj
+49 0 obj
+<<
+/S /D /St 3
+>>
+endobj
+50 0 obj
+<<
+/S /D /St 4
+>>
+endobj
+51 0 obj
+<<
+/S /D /St 5
+>>
+endobj
+52 0 obj
+<<
+/S /D /St 6
+>>
+endobj
+xref
+0 53
+0000000000 65535 f 
+0000000073 00000 n 
+0000000134 00000 n 
+0000000241 00000 n 
+0000000353 00000 n 
+0000000468 00000 n 
+0000000643 00000 n 
+0000000816 00000 n 
+0000001004 00000 n 
+0000001109 00000 n 
+0000001294 00000 n 
+0000001474 00000 n 
+0000001667 00000 n 
+0000001857 00000 n 
+0000002120 00000 n 
+0000002309 00000 n 
+0000002534 00000 n 
+0000002740 00000 n 
+0000002946 00000 n 
+0000003152 00000 n 
+0000003358 00000 n 
+0000003464 00000 n 
+0000003722 00000 n 
+0000003797 00000 n 
+0000003910 00000 n 
+0000004067 00000 n 
+0000004186 00000 n 
+0000004326 00000 n 
+0000004460 00000 n 
+0000004605 00000 n 
+0000004748 00000 n 
+0000004877 00000 n 
+0000005002 00000 n 
+0000005154 00000 n 
+0000005287 00000 n 
+0000005426 00000 n 
+0000005565 00000 n 
+0000005710 00000 n 
+0000005863 00000 n 
+0000005989 00000 n 
+0000006085 00000 n 
+0000014520 00000 n 
+0000022367 00000 n 
+0000030239 00000 n 
+0000042442 00000 n 
+0000053855 00000 n 
+0000060948 00000 n 
+0000061037 00000 n 
+0000061071 00000 n 
+0000061105 00000 n 
+0000061139 00000 n 
+0000061173 00000 n 
+0000061207 00000 n 
+trailer
+<<
+/ID 
+[<bb3a8f262e1722fc7e9d87414ea86c14><bb3a8f262e1722fc7e9d87414ea86c14>]
+% ReportLab generated PDF document -- digest (http://www.reportlab.com)
+
+/Info 21 0 R
+/Root 20 0 R
+/Size 53
+>>
+startxref
+61241
+%%EOF

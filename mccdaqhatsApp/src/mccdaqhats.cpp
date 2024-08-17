@@ -2023,7 +2023,10 @@ void mccdaqhatsCtrl::writeDB(const iocshArgBuf* pArgs)
             }
             else
             {
-                fprintf(pOutfile, "  field(SCAN, \"I/O Intr\")\n");
+                if (pParam->wHatID == HAT_ID_MCC_134)
+                    fprintf(pOutfile, "  field(SCAN, \"1 second\")\n");
+                else
+                    fprintf(pOutfile, "  field(SCAN, \"I/O Intr\")\n");
                 fprintf(pOutfile, "  info(asyn:FIFO, \"$(FIFO=100)\")\n");
             }
             if (pParam->asEnum.size() == 2)
